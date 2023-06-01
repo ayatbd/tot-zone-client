@@ -12,53 +12,53 @@ import SignUp from "../pages/SignUp";
 import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-    //   errorElement: <ErrorPage />,
-      children: [
-        {
-            path: "/",
-            element: <Home></Home>
-        },
-        {
-            path: "home",
-            element: <Home></Home>
-        },
-        {
-            path: "slider",
-            element: <Slider></Slider>
-        },
-        {
-            path: "login",
-            element: <LogIn></LogIn>
-        },
-        {
-            path: "register",
-            element: <SignUp></SignUp>
-        },
-        {
-            path: "alltoys",
-            element: <AllToys></AllToys>
-        },
-        {
-            path: "mytoys",
-            element: <MyToys></MyToys>
-        },
-        {
-            path: "addtoy",
-            element: <AddToy></AddToy>
-        },
-        {
-            path: "blogs",
-            element: <Blogs></Blogs>
-        },
-        {
-            path: "gallery",
-            element: <Gallery></Gallery>
-        }
-      ]
-    },
-  ]);
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "home",
+        element: <Home></Home>,
+      },
+      {
+        path: "slider",
+        element: <Slider></Slider>,
+      },
+      {
+        path: "login",
+        element: <LogIn></LogIn>,
+      },
+      {
+        path: "register",
+        element: <SignUp></SignUp>,
+      },
+      {
+        path: "alltoys",
+        element: <AllToys></AllToys>,
+      },
+      {
+        path: "mytoys",
+        element: <MyToys></MyToys>,
+      },
+      {
+        path: "addtoy",
+        element: <AddToy></AddToy>,
+      },
+      {
+        path: "blogs",
+        element: <Blogs></Blogs>,
+      },
+      {
+        path: "gallery",
+        element: <Gallery></Gallery>,
+      },
+    ],
+  },
+]);
 
-  export default router;
+export default router;

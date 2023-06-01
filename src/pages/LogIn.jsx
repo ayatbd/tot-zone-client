@@ -12,7 +12,6 @@ const LogIn = () => {
   const provider = new GoogleAuthProvider();
 
   const { signIn } = useContext(AuthContext);
-  // const { user } = useContext(AuthContext);
 
   const handleLogin = event =>{
     event.preventDefault();

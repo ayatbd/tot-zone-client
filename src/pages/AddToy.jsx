@@ -3,6 +3,7 @@
 
 const AddToy = () => {
   // const { user } = useContext(AuthContext);
+  
 
   const handleAdddingToy = event => {
     event.preventDefault();
@@ -17,6 +18,18 @@ const AddToy = () => {
     const category = form.category.value;
     const addToy = {toyname, quantity, email, seller, price, details, photo, category};
     console.log(addToy);
+
+    fetch("http://localhost:5000/toy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addToy),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+      });
   };
   return (
     <div className="bg-[#F4F3F0] p-24">
