@@ -1,6 +1,8 @@
 // import { useContext } from "react";
 // import { AuthContext } from "../provider/AuthProvider";
 
+import Swal from "sweetalert2";
+
 const AddToy = () => {
   // const { user } = useContext(AuthContext);
   
@@ -16,19 +18,27 @@ const AddToy = () => {
     const details = form.details.value;
     const photo = form.photo.value;
     const category = form.category.value;
-    const addToy = {toyname, quantity, email, seller, price, details, photo, category};
-    console.log(addToy);
+    const newToy = {toyname, quantity, email, seller, price, details, photo, category};
+    console.log(newToy);
 
     fetch("http://localhost:5000/toy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(addToy),
+      body: JSON.stringify(newToy),
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "The Toy Added Successfully",
+            icon: "success",
+            confirmButtonText: "Ok",
+          });
+        }
       });
   };
   return (
