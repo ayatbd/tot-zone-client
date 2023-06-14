@@ -41,6 +41,14 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  if (loading) {
+    return (
+      <div className="flex flex-col justify-center items-center">
+        <progress className="progress w-56 top-40"></progress>
+      </div>
+    );
+  }
+
   const authInfo = {
     user,
     loading,
