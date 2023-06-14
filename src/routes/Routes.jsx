@@ -10,6 +10,7 @@ import Slider from "../pages/Slider";
 import Gallery from "../pages/Gallery";
 import SignUp from "../pages/SignUp";
 import ErrorPage from "../pages/ErrorPage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -39,15 +40,15 @@ const router = createBrowserRouter([
       },
       {
         path: "alltoys",
-        element: <AllToys></AllToys>
+        element: <PrivateRoute><AllToys></AllToys></PrivateRoute>
       },
       {
         path: "mytoys",
-        element: <MyToys></MyToys>,
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>,
       },
       {
         path: "addtoy",
-        element: <AddToy></AddToy>,
+        element: <PrivateRoute><AddToy></AddToy></PrivateRoute>,
       },
       {
         path: "blogs",

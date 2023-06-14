@@ -1,10 +1,10 @@
-// import { useContext } from "react";
-// import { AuthContext } from "../provider/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 import Swal from "sweetalert2";
 
 const AddToy = () => {
-  // const { user } = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   
 
   const handleAdddingToy = event => {
@@ -67,6 +67,7 @@ const AddToy = () => {
               <input
                 type="text"
                 name="quantity"
+
                 placeholder="Available Quantity"
                 className="input input-bordered w-full"
               />
@@ -82,6 +83,7 @@ const AddToy = () => {
               <input
                 type="email"
                 name="email"
+                value={user?.email}
                 placeholder="seller email"
                 className="input input-bordered w-full"
               />
@@ -110,6 +112,7 @@ const AddToy = () => {
               <input
                 type="text"
                 name="seller"
+                value={user?.displayName}
                 placeholder="seller name"
                 className="input input-bordered w-full"
               />
@@ -123,7 +126,7 @@ const AddToy = () => {
               <input
                 type="text"
                 name="price"
-                placeholder="Price"
+                placeholder="$"
                 className="input input-bordered w-full"
               />
             </label>
