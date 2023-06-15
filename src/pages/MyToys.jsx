@@ -41,6 +41,28 @@ const MyToys = () => {
     });
   };
 
+  const handleToyUpdate = (id) => {
+    fetch(`http://localhost:5000/toy/$${id}`, {
+      method: "PATCH",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({ status: "confirm" }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.modifiedCount > 0) {
+          // update state
+          const remaining = toy.filter((t) => t._id !== id);
+          const updated = toy.find((t) => t._id === id);
+          updated.status = "confirm";
+          const newToy = [updated, ...remaining];
+          setToy(newToy);
+        }
+      });
+  };
+
   return (
     <div className="overflow-x-auto w-full">
       <table className="table w-full">
@@ -78,7 +100,10 @@ const MyToys = () => {
                   >
                     <AiFillDelete size={24} />
                   </button>
-                  <button className="btn bg-gray-600 text-red-400 p-2">
+                  <button
+                    onClick={() => handleToyUpdate(t._id)}
+                    className="btn bg-gray-600 text-red-400 p-2"
+                  >
                     <AiFillEdit size={24} />
                   </button>
                 </div>
