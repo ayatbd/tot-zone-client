@@ -5,9 +5,8 @@ import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
-  
 
-  const handleAdddingToy = event => {
+  const handleAdddingToy = (event) => {
     event.preventDefault();
     const form = event.target;
     const toyname = form.toyname.value;
@@ -17,8 +16,19 @@ const AddToy = () => {
     const price = form.price.value;
     const details = form.details.value;
     const photo = form.photo.value;
+    const rating = form.rating.value;
     const category = form.category.value;
-    const newToy = {toyname, quantity, email, seller, price, details, photo, category};
+    const newToy = {
+      toyname,
+      quantity,
+      email,
+      seller,
+      price,
+      details,
+      rating,
+      photo,
+      category,
+    };
     console.log(newToy);
 
     fetch("http://localhost:5000/toy", {
@@ -67,7 +77,6 @@ const AddToy = () => {
               <input
                 type="text"
                 name="quantity"
-
                 placeholder="Available Quantity"
                 className="input input-bordered w-full"
               />

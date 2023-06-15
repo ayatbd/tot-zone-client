@@ -1,12 +1,33 @@
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+
 const Category = () => {
   return (
-    <div className="flex justify-center items-center mb-20">
-      <div className="tabs tabs-boxed">
-        <a className="tab">Tab 1</a>
-        <a className="tab tab-active">Tab 2</a>
-        <a className="tab">Tab 3</a>
-      </div>
-    </div>
+    <Tabs>
+      <TabList>
+        <Tab>Math Toys</Tab>
+        <Tab>Language Toys</Tab>
+        <Tab>Engineering Toys</Tab>
+      </TabList>
+
+      <TabPanel>
+        <h2>Math Toys</h2>
+        {/* Render the list of math toys */}
+        {/* Each toy should have picture, name, price, rating, and view details button */}
+      </TabPanel>
+
+      <TabPanel>
+        <h2>Language Toys</h2>
+        {/* Render the list of language toys */}
+        {/* Each toy should have picture, name, price, rating, and view details button */}
+      </TabPanel>
+
+      <TabPanel>
+        <h2>Engineering Toys</h2>
+        {/* Render the list of engineering toys */}
+        {/* Each toy should have picture, name, price, rating, and view details button */}
+      </TabPanel>
+    </Tabs>
   );
 };
 

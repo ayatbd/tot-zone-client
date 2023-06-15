@@ -1,9 +1,23 @@
 import Swal from "sweetalert2";
 import { AuthContext } from "../provider/AuthProvider";
 import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 
-const updateToy = () => {
+const UpdateToy = () => {
   const { user } = useContext(AuthContext);
+
+  const loadeToy = useLoaderData();
+  const {
+    _id,
+    toyname,
+    quantity,
+    email,
+    seller,
+    price,
+    details,
+    photo,
+    category,
+  } = loadeToy;
 
   const handleUpdateToy = (event) => {
     event.preventDefault();
@@ -33,7 +47,7 @@ const updateToy = () => {
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(updatedToy),
+      body: JSON.stringify(updateToy),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -49,8 +63,8 @@ const updateToy = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-3xl font-extrabold text-center">Add a Toy</h2>
+    <div className="bg-[#F4F3F0] p-20">
+      <h2 className="text-3xl font-extrabold text-center mb-5">Update Toy</h2>
       <form onSubmit={handleUpdateToy}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
@@ -61,6 +75,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="toyname"
+                defaultValue={toyname}
                 placeholder="Toy Name"
                 className="input input-bordered w-full"
               />
@@ -74,6 +89,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="quantity"
+                defaultValue={quantity}
                 placeholder="Available Quantity"
                 className="input input-bordered w-full"
               />
@@ -89,6 +105,7 @@ const updateToy = () => {
               <input
                 type="email"
                 name="email"
+                defaultValue={email}
                 value={user?.email}
                 placeholder="seller email"
                 className="input input-bordered w-full"
@@ -103,6 +120,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="category"
+                defaultValue={category}
                 placeholder="Category"
                 className="input input-bordered w-full"
               />
@@ -118,6 +136,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="seller"
+                defaultValue={seller}
                 value={user?.displayName}
                 placeholder="seller name"
                 className="input input-bordered w-full"
@@ -132,6 +151,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="price"
+                defaultValue={price}
                 placeholder="$"
                 className="input input-bordered w-full"
               />
@@ -160,6 +180,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="details"
+                defaultValue={details}
                 placeholder="Detail Description"
                 className="input input-bordered w-full"
               />
@@ -175,6 +196,7 @@ const updateToy = () => {
               <input
                 type="text"
                 name="photo"
+                defaultValue={photo}
                 placeholder="Photo URL"
                 className="input input-bordered w-full"
               />
@@ -189,4 +211,4 @@ const updateToy = () => {
   );
 };
 
-export default updateToy;
+export default UpdateToy;

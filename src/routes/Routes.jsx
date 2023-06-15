@@ -11,7 +11,7 @@ import Gallery from "../pages/Gallery";
 import SignUp from "../pages/SignUp";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
-import updateToy from "./../pages/updateToy";
+import UpdateToy from "../pages/UpdateToy";
 
 const router = createBrowserRouter([
   {
@@ -72,8 +72,9 @@ const router = createBrowserRouter([
         element: <Gallery></Gallery>,
       },
       {
-        path: "update",
-        element: <updateToy></updateToy>,
+        path: "/update/:id",
+        element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
       },
     ],
   },
