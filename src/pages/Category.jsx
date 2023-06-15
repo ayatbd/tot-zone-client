@@ -1,24 +1,23 @@
-import { useState, useEffect } from "react";
-import { Tab, TabList, TabPanel } from "react-tabs";
-import "react-tabs/style/react-tabs.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const Category = () => {
+const ToyCategories = () => {
   const [toys, setToys] = useState([]);
-  const [activeCategory, setActiveCategory] = useState("");
+  const [activeCategory, setActiveCategory] = useState(null);
 
   useEffect(() => {
-    // Fetch the API and set the initial toys state
-    fetch("http://localhost:5000/toy")
-      .then((response) => response.json())
-      .then((data) => {
-        setToys(data);
+    // Fetch toy data from the API
+    axios
+      .get("http://localhost:5000/toy")
+      .then((response) => {
+        setToys(response.data);
       })
       .catch((error) => {
-        console.error("Error fetching toys:", error);
+        console.error("Error fetching toy data:", error);
       });
   }, []);
 
-  const handleTabSelect = (category) => {
+  const filterToysByCategory = (category) => {
     setActiveCategory(category);
   };
 
@@ -27,60 +26,63 @@ const Category = () => {
     : toys;
 
   return (
-    <div className="p-4">
-      <TabList className="flex mb-4">
-        <Tab
-          className={`mr-4 px-4 py-2 rounded ${
-            activeCategory === "mathtoy"
+    <div className="container mx-auto p-4">
+      <div className="flex justify-center space-x-4 mb-4">
+        <button
+          className={`py-2 px-4 rounded ${
+            activeCategory === null
               ? "bg-blue-500 text-white"
-              : "bg-gray-200 text-gray-600"
+              : "bg-gray-200 text-gray-800"
           }`}
-          onClick={() => handleTabSelect("mathtoy")}
+          onClick={() => filterToysByCategory(null)}
+        >
+          All
+        </button>
+        <button
+          className={`py-2 px-4 rounded ${
+            activeCategory === "Math Toy"
+              ? "bg-blue-500 text-white"
+              : "bg-gray-200 text-gray-800"
+          }`}
+          onClick={() => filterToysByCategory("Math Toy")}
         >
           Math Toy
-        </Tab>
-        <Tab
-          className={`mr-4 px-4 py-2 rounded ${
-            activeCategory === "engineeringtoy"
+        </button>
+        <button
+          className={`py-2 px-4 rounded ${
+            activeCategory === "Engineering Toy"
               ? "bg-blue-500 text-white"
-              : "bg-gray-200 text-gray-600"
+              : "bg-gray-200 text-gray-800"
           }`}
-          onClick={() => handleTabSelect("engineeringtoy")}
+          onClick={() => filterToysByCategory("Engineering Toy")}
         >
           Engineering Toy
-        </Tab>
-        <Tab
-          className={`mr-4 px-4 py-2 rounded ${
-            activeCategory === "sciencetoy"
+        </button>
+        <button
+          className={`py-2 px-4 rounded ${
+            activeCategory === "Science Toy"
               ? "bg-blue-500 text-white"
-              : "bg-gray-200 text-gray-600"
+              : "bg-gray-200 text-gray-800"
           }`}
-          onClick={() => handleTabSelect("sciencetoy")}
+          onClick={() => filterToysByCategory("Science Toy")}
         >
           Science Toy
-        </Tab>
-      </TabList>
-
-      <TabPanel>
-        {filteredToys.length > 0 ? (
-          <ul className="space-y-4">
-            {filteredToys.map((toy) => (
-              <li key={toy.id} className="bg-white p-4 rounded shadow">
-                {/* Display toy information */}
-                <h3 className="font-bold">{toy.name}</h3>
-                <p>{toy.description}</p>
-                <p>Category: {toy.category}</p>
-              </li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-center">
-            No toys found for the selected category.
-          </p>
-        )}
-      </TabPanel>
+        </button>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {filteredToys.map((toy) => (
+          <div key={toy._id} className="bg-white rounded-lg shadow-md p-4">
+            <h3 className="text-lg font-semibold">{toy.toyname}</h3>
+            <p className="mb-2">Category: {toy.category}</p>
+            <p className="mb-2">Price: {toy.price}</p>
+            <p className="mb-2">Rating: {toy.rating}</p>
+            <p className="mb-2">Details: {toy.details}</p>
+            <img src={toy.photo} alt={toy.toyname} className="w-full h-auto" />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
 
-export default Category;
+export default ToyCategories;
