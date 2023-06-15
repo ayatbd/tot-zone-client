@@ -1,3 +1,4 @@
+import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
 
@@ -6,37 +7,20 @@ import Swal from "sweetalert2";
 const AddToy = () => {
   const { user } = useContext(AuthContext);
 
-  const handleAdddingToy = (event) => {
-    event.preventDefault();
-    const form = event.target;
-    const toyname = form.toyname.value;
-    const quantity = form.quantity.value;
-    const email = form.email.value;
-    const seller = form.seller.value;
-    const price = form.price.value;
-    const details = form.details.value;
-    const photo = form.photo.value;
-    const rating = form.rating.value;
-    const category = form.category.value;
-    const newToy = {
-      toyname,
-      quantity,
-      email,
-      seller,
-      price,
-      details,
-      rating,
-      photo,
-      category,
-    };
-    console.log(newToy);
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
 
+  const onSubmit = (data) => {
     fetch("http://localhost:5000/toy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newToy),
+      body: JSON.stringify(data),
     })
       .then((res) => res.json())
       .then((data) => {
@@ -54,7 +38,7 @@ const AddToy = () => {
   return (
     <div className="bg-[#F4F3F0] p-24">
       <h2 className="text-3xl font-extrabold text-center">Add a Toy</h2>
-      <form onSubmit={handleAdddingToy}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
@@ -63,6 +47,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("toyname", { required: true })}
                 name="toyname"
                 placeholder="Toy Name"
                 className="input input-bordered w-full"
@@ -76,6 +61,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("quantity", { required: true })}
                 name="quantity"
                 placeholder="Available Quantity"
                 className="input input-bordered w-full"
@@ -91,6 +77,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="email"
+                {...register("email", { required: true })}
                 name="email"
                 value={user?.email}
                 placeholder="seller email"
@@ -102,14 +89,17 @@ const AddToy = () => {
             <label className="label">
               <span className="label-text">Category</span>
             </label>
-            <label className="input-group">
-              <input
-                type="text"
-                name="category"
-                placeholder="Category"
-                className="input input-bordered w-full"
-              />
-            </label>
+            <select
+              {...register("category", { required: true })}
+              className="select select-bordered"
+            >
+              <option disabled selected>
+                Select Category
+              </option>
+              <option>Math Toy</option>
+              <option>Engineering Toy</option>
+              <option>Science Toys</option>
+            </select>
           </div>
         </div>
         <div className="md:flex mb-8">
@@ -120,6 +110,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("seller", { required: true })}
                 name="seller"
                 value={user?.displayName}
                 placeholder="seller name"
@@ -134,6 +125,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("price", { required: true })}
                 name="price"
                 placeholder="$"
                 className="input input-bordered w-full"
@@ -149,6 +141,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("rating", { required: true })}
                 name="rating"
                 placeholder="Ratings"
                 className="input input-bordered w-full"
@@ -162,6 +155,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("details", { required: true })}
                 name="details"
                 placeholder="Detail Description"
                 className="input input-bordered w-full"
@@ -177,6 +171,7 @@ const AddToy = () => {
             <label className="input-group">
               <input
                 type="text"
+                {...register("photo", { required: true })}
                 name="photo"
                 placeholder="Photo URL"
                 className="input input-bordered w-full"

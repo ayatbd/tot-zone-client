@@ -12,7 +12,7 @@ const MyToys = () => {
     fetch(url)
       .then((response) => response.json())
       .then((data) => setToy(data));
-  }, []);
+  }, [url]);
 
   const handleDelete = (_id) => {
     console.log(_id);
@@ -62,7 +62,7 @@ const MyToys = () => {
                 <div className="flex items-center space-x-3">
                   <div className="avatar">
                     <div className="mask mask-squircle w-12 h-12">
-                      <img src={t.photo && t.photo} />
+                      <img className="p-1" src={t.photo && t.photo} />
                     </div>
                   </div>
                 </div>
