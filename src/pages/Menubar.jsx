@@ -12,7 +12,7 @@ const Menubar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar bg-slate-100">
+    <div className="navbar bg-slate-100 py-4 fixed top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,7 +48,9 @@ const Menubar = () => {
             )}
           </ul>
         </div>
-        <Link className="ml-2 normal-case text-xl hidden md:inline">Tot Zone</Link>
+        <Link className="ml-2 normal-case text-xl hidden md:inline">
+          Tot Zone
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -87,9 +89,9 @@ const Menubar = () => {
         )}
         <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
-            {!user ?
+            {!user ? (
               <img src={logo} />
-             : (
+            ) : (
               <div>
                 <img src={user?.photoURL} />
               </div>

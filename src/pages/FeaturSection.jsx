@@ -3,7 +3,7 @@ import img13 from "../assets/images/img13.jpg";
 import img14 from "../assets/images/img14.webp";
 const FeatureSection = () => {
   return (
-    <section className="py-16 bg-gray-100">
+    <section className="py-16 bg-gray-100 mt-8">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl text-center font-bold mb-8">
           Explore the Exciting Features

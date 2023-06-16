@@ -98,7 +98,7 @@ const AddToy = () => {
               </option>
               <option>Math Toy</option>
               <option>Engineering Toy</option>
-              <option>Science Toys</option>
+              <option>Science Toy</option>
             </select>
           </div>
         </div>

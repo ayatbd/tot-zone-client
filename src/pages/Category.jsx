@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 const ToyCategories = () => {
@@ -24,6 +24,10 @@ const ToyCategories = () => {
   const filteredToys = activeCategory
     ? toys.filter((toy) => toy.category === activeCategory)
     : toys;
+
+  const handleDetails = (id) => {
+    console.log(id);
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -69,15 +73,22 @@ const ToyCategories = () => {
           Science Toy
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-7">
         {filteredToys.map((toy) => (
           <div key={toy._id} className="bg-white rounded-lg shadow-md p-4">
             <h3 className="text-lg font-semibold">{toy.toyname}</h3>
             <p className="mb-2">Category: {toy.category}</p>
             <p className="mb-2">Price: {toy.price}</p>
             <p className="mb-2">Rating: {toy.rating}</p>
-            <p className="mb-2">Details: {toy.details}</p>
-            <img src={toy.photo} alt={toy.toyname} className="w-full h-auto" />
+            <img src={toy.photo} alt={toy.toyname} className="w-full h-48" />
+            <span className="flex flex-col justify-center mt-3">
+              <button
+                onClick={() => handleDetails(toy._id)}
+                className="btn btn-accent"
+              >
+                view details
+              </button>
+            </span>
           </div>
         ))}
       </div>
