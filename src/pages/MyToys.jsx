@@ -43,7 +43,7 @@ const MyToys = () => {
   };
 
   return (
-    <div className="overflow-x-auto w-full">
+    <div className="overflow-x-auto w-full mt-28 mb-14">
       <table className="table w-full">
         <thead>
           <tr>

@@ -9,7 +9,7 @@ const AllToys = () => {
       .then((data) => setToys(data));
   }, []);
   return (
-    <div className="overflow-x-auto w-full mt-14">
+    <div className="overflow-x-auto w-full mb-20 mt-28">
       <table className="table w-full">
         {/* head */}
         <thead>
@@ -24,7 +24,7 @@ const AllToys = () => {
         </thead>
         <tbody>
           {toys.map((c) => (
-            <tr key={c._email}>
+            <tr key={c._id}>
               <td>{c.seller}</td>
               <td>{c.toyname}</td>
               <td>{c.category}</td>

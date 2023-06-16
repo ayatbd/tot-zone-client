@@ -1,19 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { FaGoogle } from 'react-icons/fa';
+import { FaGoogle } from "react-icons/fa";
 import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 import app from "../firebase/firebase.config";
 
 const LogIn = () => {
   // eslint-disable-next-line no-unused-vars
   const [user, setUser] = useState(null);
-  const auth = getAuth(app)
+  const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
+  const Navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const { signIn } = useContext(AuthContext);
 
-  const handleLogin = event =>{
+  const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -21,25 +24,25 @@ const LogIn = () => {
     // console.log(name, email, password);
 
     signIn(email, password)
-            .then(result => {
-                const user = result.user;
-                console.log(user);
-            })
-            .catch(error => console.log(error));
-    }
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => console.log(error));
+  };
 
-  const handleLoginWithPopUp = () =>{
+  const handleLoginWithPopUp = () => {
     signInWithPopup(auth, provider)
-    .then(result=>{
-      const loggedUser = result.user;
-      console.log(loggedUser)
-      setUser(loggedUser)
-    })
-    .catch(error=>{
-      console.log("error", error.message)
-    })
-  }
-
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        setUser(loggedUser);
+        Navigate(from, { replace: true });
+      })
+      .catch((error) => {
+        console.log("error", error.message);
+      });
+  };
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -82,10 +85,23 @@ const LogIn = () => {
             </form>
             <div className="mt-5 flex gap-4 items-center">
               <h4>Instead Login with</h4>
-              <Link onClick={handleLoginWithPopUp} className="bg-blue-300 p-2 rounded-full"><FaGoogle /></Link>
+              <Link
+                onClick={handleLoginWithPopUp}
+                className="bg-blue-300 p-2 rounded-full"
+              >
+                <FaGoogle />
+              </Link>
             </div>
-            
-            <p className="mt-5">New here? <Link className="text-orange-600 underline underline-offset-4 font-bold" to="/register">Register</Link> </p>
+
+            <p className="mt-5">
+              New here?{" "}
+              <Link
+                className="text-orange-600 underline underline-offset-4 font-bold"
+                to="/register"
+              >
+                Register
+              </Link>{" "}
+            </p>
           </div>
         </div>
       </div>

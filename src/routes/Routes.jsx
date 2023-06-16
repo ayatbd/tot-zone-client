@@ -12,6 +12,8 @@ import SignUp from "../pages/SignUp";
 import ErrorPage from "../pages/ErrorPage";
 import PrivateRoute from "./PrivateRoute";
 import UpdateToy from "../pages/UpdateToy";
+import Category from "../pages/Category";
+import ViewDetails from "../pages/ViewDetails";
 
 const router = createBrowserRouter([
   {
@@ -74,6 +76,15 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
+        loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
+      },
+      {
+        path: "/category/:id",
+        element: (
+          <PrivateRoute>
+            <ViewDetails></ViewDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) => fetch(`http://localhost:5000/toy/${params.id}`),
       },
     ],

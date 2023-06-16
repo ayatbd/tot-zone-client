@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
-const ToyCategories = () => {
+const Category = () => {
   const [toys, setToys] = useState([]);
   const [activeCategory, setActiveCategory] = useState(null);
 
   useEffect(() => {
-    // Fetch toy data from the API
     axios
       .get("http://localhost:5000/toy")
       .then((response) => {
@@ -82,12 +82,9 @@ const ToyCategories = () => {
             <p className="mb-2">Rating: {toy.rating}</p>
             <img src={toy.photo} alt={toy.toyname} className="w-full h-48" />
             <span className="flex flex-col justify-center mt-3">
-              <button
-                onClick={() => handleDetails(toy._id)}
-                className="btn btn-accent"
-              >
-                view details
-              </button>
+              <Link to={`/category/${toy._id}`}>
+                <button className="btn btn-accent">view details</button>
+              </Link>
             </span>
           </div>
         ))}
@@ -96,4 +93,4 @@ const ToyCategories = () => {
   );
 };
 
-export default ToyCategories;
+export default Category;
