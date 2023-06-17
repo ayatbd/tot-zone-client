@@ -8,7 +8,7 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/toy")
+      .get("https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy")
       .then((response) => {
         setToys(response.data);
       })

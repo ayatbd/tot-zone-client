@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [toy, setToy] = useState([]);
-  const url = `http://localhost:5000/toy?email=${user.email}`;
+  const url = `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy?email=${user.email}`;
   useEffect(() => {
     fetch(url)
       .then((response) => response.json())
@@ -26,9 +26,12 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/toy/${_id}`, {
-          method: "DELETE",
-        })
+        fetch(
+          `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy/${_id}`,
+          {
+            method: "DELETE",
+          }
+        )
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
