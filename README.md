@@ -2,7 +2,7 @@
 <h2>Below are the features of MasteryKarate website
 </h2>
 <ul>
-  <li>Anyone can find so easily Toys of Teddy Bear Category by this site.
+  <li>Anyone can find so easily Toys of Teddy Bear and Car Category by this site.
 </li>
   Having a system User can add a Toys, see all of his toys in My Toys page, also see All Toys by adding anyone.
 </li>
