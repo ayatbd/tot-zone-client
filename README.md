@@ -11,5 +11,5 @@
   <li>Any user can buy Toys from this site.</li>
 </ul>
 </hr>
-<p>Server site link: <Link>[[https://github.com/ayatbd/summer-camp-server](https://github.com/ayatbd/tot-zone-server)](https://github.com/ayatbd/tot-zone-server)https://github.com/ayatbd/tot-zone-server</Link></p>
+<p>Server site link: <Link>https://github.com/ayatbd/tot-zone-server</Link></p>
 
