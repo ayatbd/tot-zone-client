@@ -12,7 +12,7 @@ const Menubar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar bg-slate-100 py-4 fixed top-0 z-10">
+    <div className="navbar bg-blue-700 bg-opacity-70 py-4 top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,30 +48,40 @@ const Menubar = () => {
             )}
           </ul>
         </div>
-        <Link className="ml-2 normal-case text-xl hidden md:inline">
+        <Link className="ml-2 normal-case text-white text-2xl hidden md:inline">
           Tot Zone
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/home">Home</Link>
+            <Link to="/home" className="text-white text-xl">
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/alltoys">All Toys</Link>
+            <Link to="/alltoys" className="text-white text-xl">
+              All Toys
+            </Link>
           </li>
           {user && (
             <li>
-              <Link to="/mytoys">My Toys</Link>
+              <Link to="/mytoys" className="text-white text-xl">
+                My Toys
+              </Link>
             </li>
           )}
           {user && (
             <li>
-              <Link to="/addtoy">Add a toy</Link>
+              <Link to="/addtoy" className="text-white text-xl">
+                Add a toy
+              </Link>
             </li>
           )}
           <li>
-            <Link to="/blogs">Blogs</Link>
+            <Link to="/blogs" className="text-white text-xl">
+              Blogs
+            </Link>
           </li>
         </ul>
       </div>
@@ -79,13 +89,21 @@ const Menubar = () => {
         {!user ? (
           <ul className="mr-10 flex flex-row gap-5">
             <li>
-              <Link to="login">Login</Link>
+              <Link
+                to="login"
+                className="text-white text-xl hover:text-gray-300"
+              >
+                Login
+              </Link>
             </li>
           </ul>
         ) : (
-          <button onClick={handleLogOut} className="mr-5 btn btn-accent">
+          <Link
+            onClick={handleLogOut}
+            className="mr-5 text-xl text-white hover:text-gray-300"
+          >
             Logout
-          </button>
+          </Link>
         )}
         <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">

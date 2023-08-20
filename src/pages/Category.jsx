@@ -25,13 +25,9 @@ const Category = () => {
     ? toys.filter((toy) => toy.category === activeCategory)
     : toys;
 
-  const handleDetails = (id) => {
-    console.log(id);
-  };
-
   return (
     <div className="container mx-auto p-4">
-      <div className="flex justify-center space-x-4 mb-4">
+      <div className="flex justify-center space-x-1 mb-4">
         <button
           className={`py-2 px-4 rounded ${
             activeCategory === null

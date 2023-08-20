@@ -1,65 +1,105 @@
 const Blogs = () => {
   return (
-    <div className="pl-28 space-y-3 my-12 mt-28">
-      <div>
-        <p className="">
-          <span className="font-bold mr-5">Q.</span>What is an access token and
-          refresh token? How do they work and where should we store them on the
-          client-side?
-        </p>
-        <p className="">
-          <span className="font-bold mr-5 underline">Ans.</span>An access token
-          is a credential for accessing protected resources, while a refresh
-          token is used to obtain a new access token when the original one
-          expires. They should be securely stored on the client-side, such as in
-          secure storage mechanisms provided by the operating system or using
-          browser-based storage options like HTTP-only cookies or local storage
-          with proper encryption and access control.
-        </p>
-      </div>
-      <div>
-        <p className="">
-          <span className="font-bold mr-5">Q.</span>Compare SQL and NoSQL
-          databases?
-        </p>
-        <p className="">
-          <span className="font-bold mr-5 underline">Ans.</span>SQL databases
-          are relational and use structured query language for data management,
-          providing strong consistency, ACID transactions, and predefined
-          schemas. NoSQL databases are non-relational, offering flexible data
-          models, horizontal scalability, eventual consistency, and can handle
-          unstructured or semi-structured data.
-        </p>
-      </div>
-      <div>
-        <p className="">
-          <span className="font-bold mr-5">Q.</span>What is express js? What is
-          Nest JS (google it)?
-        </p>
-        <p className="">
-          <span className="font-bold mr-5 underline">Ans.</span>Express.js is a
-          minimalist web application framework for Node.js, providing a simple
-          and flexible way to build web applications and APIs. Nest.js is a
-          progressive, TypeScript-based framework for building scalable and
-          efficient server-side applications, leveraging concepts from Angular
-          and Express.js to create a modular and extensible architecture.
-        </p>
-      </div>
-      <div>
-        <p className="">
-          <span className="font-bold mr-5">Q.</span>What is MongoDB aggregate
-          and how does it work (google it)?
-        </p>
-        <p className="">
-          <span className="font-bold mr-5 underline">Ans.</span>MongoDB's
-          aggregate is a framework for performing advanced data processing
-          operations and transformations on the data stored in MongoDB. It
-          allows you to perform tasks like filtering, grouping, joining, and
-          aggregating data using a pipeline of stages. Each stage applies a
-          specific operation to the data, and the output of one stage serves as
-          the input for the next, allowing for powerful data manipulations and
-          analytics.
-        </p>
+    <div className="min-h-[50vh] my-10 md:mt-24 max-w-[900px] mx-auto">
+      <div className="space-y-4">
+        <div
+          tabIndex={0}
+          className="collapse collapse-plus border border-primary bg-base-100 rounded-box "
+        >
+          <div className="collapse-title text-xl font-medium">
+            What is an access token and refresh token? How do they work and
+            where should we store them on the client-side?
+          </div>
+          <div className="collapse-content">
+            <p>
+              1. Access Token: An access token is a credential that is used to
+              authenticate and authorize a user when making requests to access
+              protected resources on a server. It is typically a JSON Web Token
+              (JWT) that contains encoded information about the user and their
+              permissions. The access token has an expiration time and is
+              generally short-lived.
+              <br /> <br />
+              2. Refresh Token: A refresh token is a long-lived credential that
+              is used to obtain a new access token after the current one
+              expires. It is securely stored on the client-side and sent to the
+              server to request a fresh access token when needed. Refresh tokens
+              are typically associated with longer expiration times and can be
+              used to maintain the user's session and avoid frequent
+              authentication.
+            </p>
+            <p className="mt-3">
+              <span className="font-semibold">
+                Storing them on the client-side:
+              </span>{" "}
+              Both the access token and refresh token should be stored securely
+              on the client-side. Here are some common approaches:
+              <br />
+              1. Access Token: The access token is typically stored in memory
+              (e.g., a JavaScript variable) or in a client-side storage
+              mechanism like browser cookies or local storage. Storing it in
+              memory is generally recommended to reduce the risk of token theft
+              from storage mechanisms.
+              <br />
+              2. Refresh Token: The refresh token is more sensitive and should
+              be stored securely. It is usually stored in an HTTP-only cookie to
+              prevent access by client-side JavaScript. This helps protect
+              against cross-site scripting (XSS) attacks. Alternatively, it can
+              be stored in secure client-side storage mechanisms with
+              appropriate precautions.
+            </p>
+          </div>
+        </div>
+        <div
+          tabIndex={0}
+          className="collapse collapse-plus border border-primary bg-base-100 rounded-box"
+        >
+          <div className="collapse-title text-xl font-medium">
+            Compare SQL and NoSQL databases?
+          </div>
+          <div className="collapse-content">
+            <p>
+              SQL databases are vertically scalable, while NoSQL databases are
+              horizontally scalable. SQL databases are table-based, while NoSQL
+              databases are document, key-value, graph, or wide-column stores.
+              SQL databases are better for multi-row transactions, while NoSQL
+              is better for unstructured data like documents or JSON.
+            </p>
+          </div>
+        </div>
+        <div
+          tabIndex={0}
+          className="collapse collapse-plus border border-primary bg-base-100 rounded-box"
+        >
+          <div className="collapse-title text-xl font-medium">
+            What is express js? What is Nest JS?
+          </div>
+          <div className="collapse-content">
+            <p>
+              Express is a minimalist and flexible framework that is easy to use
+              and has a large community of developers. NestJS, on the other
+              hand, is a newer framework that provides additional features such
+              as dependency injection, a modular architecture, and an intuitive
+              CLI.
+            </p>
+          </div>
+        </div>
+        <div
+          tabIndex={0}
+          className="collapse collapse-plus border border-primary bg-base-100 rounded-box"
+        >
+          <div className="collapse-title text-xl font-medium">
+            What is MongoDB aggregate and how does it work?
+          </div>
+          <div className="collapse-content">
+            <p>
+              Aggregation is a way of processing a large number of documents in
+              a collection by means of passing them through different stages.
+              The stages make up what is known as a pipeline. The stages in a
+              pipeline can filter, sort, group, reshape and modify documents
+              that pass through the pipeline.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
