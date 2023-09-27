@@ -9,7 +9,7 @@ const AllToys = () => {
       .then((data) => setToys(data));
   }, []);
   return (
-    <div className="overflow-x-auto w-full mb-20 mt-28">
+    <div className="overflow-x-auto w-full my-10">
       <table className="table w-full">
         {/* head */}
         <thead>
