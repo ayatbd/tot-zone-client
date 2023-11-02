@@ -1,20 +1,23 @@
 import { useForm } from "react-hook-form";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-
 import Swal from "sweetalert2";
 
 const AddToy = () => {
   const { user } = useContext(AuthContext);
-
+  const [loading, setLoading] = useState(false);
   const {
     register,
     handleSubmit,
+    reset,
+    // eslint-disable-next-line no-unused-vars
     watch,
+    // eslint-disable-next-line no-unused-vars
     formState: { errors },
   } = useForm();
 
   const onSubmit = (data) => {
+    setLoading(true);
     fetch("https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy", {
       method: "POST",
       headers: {
@@ -24,7 +27,6 @@ const AddToy = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
@@ -32,6 +34,8 @@ const AddToy = () => {
             icon: "success",
             confirmButtonText: "Ok",
           });
+          setLoading(false);
+          reset(); // Reset the form
         }
       });
   };
@@ -60,7 +64,7 @@ const AddToy = () => {
             </label>
             <label className="input-group">
               <input
-                type="text"
+                type="number"
                 {...register("quantity", { required: true })}
                 name="quantity"
                 placeholder="Available Quantity"
@@ -96,9 +100,11 @@ const AddToy = () => {
               <option disabled selected>
                 Select Category
               </option>
-              <option>Math Toy</option>
-              <option>Engineering Toy</option>
-              <option>Science Toy</option>
+              <option>Plush Teddy</option>
+              <option>Classic Teddy</option>
+              <option>Giant Teddy</option>
+              <option>Mini Teddy</option>
+              <option>Vintage Teddy</option>
             </select>
           </div>
         </div>
@@ -124,7 +130,7 @@ const AddToy = () => {
             </label>
             <label className="input-group">
               <input
-                type="text"
+                type="number"
                 {...register("price", { required: true })}
                 name="price"
                 placeholder="$"
@@ -140,7 +146,7 @@ const AddToy = () => {
             </label>
             <label className="input-group">
               <input
-                type="text"
+                type="number"
                 {...register("rating", { required: true })}
                 name="rating"
                 placeholder="Ratings"
@@ -180,7 +186,9 @@ const AddToy = () => {
           </div>
         </div>
         <div className="text-center">
-          <input type="submit" value="Add Toy" className="btn btn-accent" />
+          <button className="bg-blue-500 w-1/6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+            {loading ? "Loading.." : "Add Now"}
+          </button>
         </div>
       </form>
     </div>

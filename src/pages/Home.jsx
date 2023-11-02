@@ -1,8 +1,7 @@
 import Category from "./Category";
-import FeatureSection from "./FeaturSection";
 import Gallery from "./Gallery";
 import OurServices from "./OurServices";
-import ProductSection from "./ProductSection";
+import Review from "./Review";
 import Slider from "./Slider";
 import Toys from "./Toys";
 
@@ -14,7 +13,7 @@ const Home = () => {
       <Category></Category>
       <Toys></Toys>
       <OurServices />
-      <ProductSection></ProductSection>
+      <Review />
     </div>
   );
 };

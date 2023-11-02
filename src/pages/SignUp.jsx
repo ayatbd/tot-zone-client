@@ -12,7 +12,7 @@ import {
 import app from "../firebase/firebase.config";
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, setLoading } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [user, setUser] = useState(null);
@@ -46,6 +46,7 @@ const SignUp = () => {
       .catch((error) => {
         console.log(error);
         setError(error.message);
+        setLoading(false);
       });
   };
 

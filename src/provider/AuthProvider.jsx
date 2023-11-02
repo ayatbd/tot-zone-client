@@ -7,6 +7,7 @@ import {
   signOut,
 } from "firebase/auth";
 import app from "../firebase/firebase.config";
+import Loader from "../shared/Loader";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -42,16 +43,13 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   if (loading) {
-    return (
-      <div className="flex flex-col justify-center items-center">
-        <progress className="progress w-56 top-40"></progress>
-      </div>
-    );
+    return <Loader />;
   }
 
   const authInfo = {
     user,
     loading,
+    setLoading,
     createUser,
     signIn,
     logOut,

@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/images/logo.jpg";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import logo from "../assets/images/logo4.png";
+import avatar from "../assets/images/logo.jpg";
 
 const Menubar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -12,7 +13,7 @@ const Menubar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="navbar bg-blue-700 bg-opacity-70 py-4 top-0 z-10">
+    <div className="navbar bg-gradient-to-r from-[#3057D3] to-[#14C196] py-4 top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -48,8 +49,9 @@ const Menubar = () => {
             )}
           </ul>
         </div>
-        <Link className="ml-2 normal-case text-white text-2xl hidden md:inline">
-          Tot Zone
+        <Link className="ml-2 flex items-center gap-2 font-bold text-cyan-600 text-[28px]">
+          <img className="w-16 h-12" src={logo} alt="logo" />
+          Tot<span className="text-red-600">Zone</span>
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -85,30 +87,32 @@ const Menubar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-4">
         {!user ? (
-          <ul className="mr-10 flex flex-row gap-5">
-            <li>
-              <Link
-                to="login"
-                className="text-white text-xl hover:text-gray-300"
-              >
-                Login
-              </Link>
-            </li>
-          </ul>
+          <Link
+            to="/login"
+            className="relative items-center justify-start inline-block px-7 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group"
+          >
+            <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+              Log In
+            </span>
+          </Link>
         ) : (
           <Link
             onClick={handleLogOut}
-            className="mr-5 text-xl text-white hover:text-gray-300"
+            className="relative items-center justify-start inline-block px-7 py-3 overflow-hidden font-medium transition-all bg-blue-600 rounded-full hover:bg-white group"
           >
-            Logout
+            <span className="absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full"></span>
+            <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-blue-600">
+              Log Out
+            </span>
           </Link>
         )}
         <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
           <div className="w-10 rounded-full">
             {!user ? (
-              <img src={logo} />
+              <img src={avatar} />
             ) : (
               <div>
                 <img src={user?.photoURL} />
