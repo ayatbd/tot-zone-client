@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
-import { AiFillDelete, AiFillEdit } from "react-icons/ai";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import Loader from "../shared/Loader";
@@ -51,63 +50,63 @@ const MyToys = () => {
     });
   };
 
+  if (loading) {
+    return <Loader></Loader>;
+  }
   return (
-    <div>
-      {loading ? (
-        <Loader />
-      ) : (
-        <div className="overflow-x-auto w-full my-10">
-          <table className="table w-full">
-            <thead>
-              <tr>
-                <th>Toy Pictur</th>
-                <th>Toy Name</th>
-                <th>Quantity</th>
-                <th>Category</th>
-                <th>Price</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {toy.map((t) => (
-                <tr key={t._id}>
-                  <td>
-                    <div className="flex items-center space-x-3">
-                      <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                          <img className="p-1" src={t.photo && t.photo} />
-                        </div>
+    <div className="text-gray-900 bg-gray-200">
+      <div className="p-4 flex">
+        <h1 className="text-3xl">All Toys</h1>
+      </div>
+      <div className="px-3 py-4 flex justify-center">
+        <table className="w-full text-md bg-white shadow-md rounded mb-4">
+          <tbody>
+            <tr className="border-b">
+              <th className="text-left p-3 px-5">Toy Pictur</th>
+              <th className="text-left p-3 px-5">Quantity</th>
+              <th className="text-left p-3 px-5">Category</th>
+              <th className="text-left p-3 px-5">Price</th>
+              <th className="text-left p-3 px-5">Action</th>
+              <th className="text-left p-3 px-5">Action</th>
+            </tr>
+            {toy.map((t) => (
+              <tr
+                key={t._id}
+                className="border-b hover:bg-orange-100 bg-gray-100"
+              >
+                <td className="p-3 px-5">
+                  <div className="flex items-center space-x-3">
+                    <div className="avatar">
+                      <div className="mask mask-squircle w-12 h-12">
+                        <img className="p-1" src={t.photo && t.photo} />
                       </div>
                     </div>
-                  </td>
-                  <td>{t.toyname}</td>
-                  <td>{t.quantity}</td>
-                  <td>{t.category}</td>
-                  <td>{t.price}</td>
-                  <td>
-                    <div className="flex gap-1">
-                      <button
-                        onClick={() => handleDelete(t._id)}
-                        className="btn bg-gray-600 text-red-400 p-2"
-                      >
-                        <AiFillDelete size={24} />
-                      </button>
-                      <Link to={`/update/${t._id}`}>
-                        <button
-                          // onClick={() => handleToyUpdate(t._id)}
-                          className="btn bg-gray-600 text-red-400 p-2"
-                        >
-                          <AiFillEdit size={24} />
-                        </button>
-                      </Link>
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      )}
+                  </div>
+                </td>
+                <td className="p-3 px-5">{t.toyname}</td>
+                <td className="p-3 px-5">{t.quantity}</td>
+                <td className="p-3 px-5">{t.category}</td>
+                <td className="p-3 px-5">{t.price}</td>
+                <td className="p-3 px-5 flex justify-start">
+                  <button
+                    onClick={() => handleDelete(t._id)}
+                    type="button"
+                    className="mr-3 text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className=" text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                    type="button"
+                  >
+                    <Link to={`/update/${t._id}`}>Edit</Link>
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

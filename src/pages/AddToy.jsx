@@ -82,7 +82,6 @@ const AddToy = () => {
               <input
                 type="email"
                 {...register("email", { required: true })}
-                name="email"
                 value={user?.email}
                 placeholder="seller email"
                 className="input input-bordered w-full"
