@@ -1,4 +1,4 @@
-import logo from "../assets/images/logo4.png";
+import logo from "../../assets/images/logo4.png";
 import {
   FaFacebookF,
   FaInstagram,

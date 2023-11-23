@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "../provider/AuthProvider";
-import logo from "../assets/images/logo4.png";
-import avatar from "../assets/images/logo.jpg";
+import logo from "../../assets/images/logo4.png";
+import avatar from "../../assets/images/logo.jpg";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Menubar = () => {
   const { user, logOut } = useContext(AuthContext);

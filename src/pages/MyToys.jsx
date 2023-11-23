@@ -58,7 +58,7 @@ const MyToys = () => {
       <div className="p-4 flex">
         <h1 className="text-3xl">All Toys</h1>
       </div>
-      <div className="px-3 py-4 flex justify-center">
+      <div className="px-3 py-4 overflow-x-auto">
         <table className="w-full text-md bg-white shadow-md rounded mb-4">
           <tbody>
             <tr className="border-b">
