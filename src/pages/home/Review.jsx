@@ -7,8 +7,8 @@ const Review = () => {
       <div className="my-10 mx-auto max-w-screen-md px-10 py-16">
         <div className="flex w-full flex-col">
           <div className="flex flex-col sm:flex-row">
-            <h1 className="max-w-sm text-3xl font-bold text-blue-900">
-              What people think <br />
+            <h1 className="max-w-sm text-3xl font-bold">
+              What people say <br />
               about us
             </h1>
             <div className="my-4 rounded-xl bg-white py-2 px-4 shadow sm:my-0 sm:ml-auto">
@@ -116,15 +116,15 @@ const Review = () => {
               </li>
             </ul>
           </div>
-          <button className="w-36 rounded-full bg-blue-900 py-3 text-white font-medium">
+          <button className="w-36 rounded-full bg-primary py-3 text-white font-medium">
             Write a review
           </button>
         </div>
       </div>
       <div className="px-4 py-12 md:py-24">
         <div className="max-w-screen-xl mx-auto">
-          <h2 className="font-black text-black text-center text-3xl leading-none uppercase max-w-2xl mx-auto mb-12">
-            What Listeners Are Saying
+          <h2 className="font-black text-center text-3xl leading-none uppercase max-w-2xl mx-auto mb-12">
+            Customers Review
           </h2>
           <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-4 relative">
             <div className="bg-gray-200 rounded-lg p-8 text-center md:w-1/3">

@@ -27,34 +27,36 @@ const galleryImgRevers = [
 
 const Gallery = () => {
   return (
-    <div className="max-container my-10 md:my-20">
-      <div className="w-full flex justify-center items-end">
-        <h1 className="text-2xl md:text-4xl font-bold">Gallery</h1>
-      </div>
-      <div className="my-10 relative rounded-xl shadow-xl">
-        <div className="h-[200px] w-full px-5 pt-5">
-          <Marquee key="" velocity={12} className="w-full h-full">
-            {galleryImg?.map((toyImg, index) => (
-              <div key={index} className="w-fit h-[200px] overflow-hidden  ">
-                <img
-                  src={toyImg}
-                  className="w-fit h-full border-r hover:scale-[1.2] origin-center duration-300"
-                />
-              </div>
-            ))}
-          </Marquee>
+    <div className="container mx-auto">
+      <div className="my-10 md:my-20">
+        <div className="w-full flex justify-center items-end">
+          <h1 className="text-2xl md:text-4xl font-bold">Gallery</h1>
         </div>
-        <div className="h-[200px] w-full px-5 pb-5">
-          <Marquee key="" velocity={12}>
-            {galleryImgRevers?.map((toyImg, index) => (
-              <div key={index} className="w-fit h-[200px] overflow-hidden  ">
-                <img
-                  src={toyImg}
-                  className="w-fit h-[200px] border-r hover:scale-[1.2] origin-center duration-300"
-                />
-              </div>
-            ))}
-          </Marquee>
+        <div className="my-10 relative rounded-xl shadow-xl">
+          <div className="h-[200px] w-full px-5 pt-5">
+            <Marquee key="" velocity={12} className="w-full h-full">
+              {galleryImg?.map((toyImg, index) => (
+                <div key={index} className="w-fit h-[200px] overflow-hidden  ">
+                  <img
+                    src={toyImg}
+                    className="w-fit h-full border-r hover:scale-[1.2] origin-center duration-300"
+                  />
+                </div>
+              ))}
+            </Marquee>
+          </div>
+          <div className="h-[200px] w-full px-5 pb-5">
+            <Marquee key="" velocity={12}>
+              {galleryImgRevers?.map((toyImg, index) => (
+                <div key={index} className="w-fit h-[200px] overflow-hidden  ">
+                  <img
+                    src={toyImg}
+                    className="w-fit h-[200px] border-r hover:scale-[1.2] origin-center duration-300"
+                  />
+                </div>
+              ))}
+            </Marquee>
+          </div>
         </div>
       </div>
     </div>

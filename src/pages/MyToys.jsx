@@ -3,12 +3,13 @@ import { AuthContext } from "../provider/AuthProvider";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import Loader from "../shared/Loader";
+import PageBanner from "../shared/PageBanner";
 
 const MyToys = () => {
   const { user } = useContext(AuthContext);
   const [loading, setLoading] = useState(false);
   const [toy, setToy] = useState([]);
-  const url = `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy?email=${user?.email}`;
+  const url = `https://tot-zone-server.vercel.app/toy?email=${user?.email}`;
   useEffect(() => {
     setLoading(true);
     fetch(url)
@@ -31,12 +32,9 @@ const MyToys = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(
-          `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy/${_id}`,
-          {
-            method: "DELETE",
-          }
-        )
+        fetch(`https://tot-zone-server.vercel.app/toy/${_id}`, {
+          method: "DELETE",
+        })
           .then((res) => res.json())
           .then((data) => {
             console.log(data);
@@ -55,10 +53,15 @@ const MyToys = () => {
   }
   return (
     <div className="text-gray-900 bg-gray-200">
-      <div className="p-4 flex">
-        <h1 className="text-3xl">All Toys</h1>
-      </div>
-      <div className="px-3 py-4 overflow-x-auto">
+      <PageBanner heading="My Toys">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>My Toys</li>
+        </ul>
+      </PageBanner>
+      <div className="px-3 py-4 overflow-x-auto container mx-auto">
         <table className="w-full text-md bg-white shadow-md rounded mb-4">
           <tbody>
             <tr className="border-b">

@@ -30,7 +30,7 @@ const CategoryCard = ({ toy }) => {
                 View Details
               </button>
             </Link>
-            <p className="text-red-600 font-[500]">${price}</p>
+            <p className="text-red-600 text-xl font-[500]">${price}</p>
           </span>
         </div>
       </div>

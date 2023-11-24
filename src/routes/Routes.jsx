@@ -76,9 +76,7 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <UpdateToy></UpdateToy>,
         loader: ({ params }) =>
-          fetch(
-            `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy/${params.id}`
-          ),
+          fetch(`https://tot-zone-server.vercel.app/toy/${params.id}`),
       },
       {
         path: "/category/:id",
@@ -88,9 +86,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(
-            `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy/${params.id}`
-          ),
+          fetch(`https://tot-zone-server.vercel.app/toy/${params.id}`),
       },
     ],
   },

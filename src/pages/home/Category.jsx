@@ -11,7 +11,7 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get("https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy")
+      .get("https://tot-zone-server.vercel.app/toy")
       .then((response) => {
         setToys(response.data);
       })
@@ -33,7 +33,7 @@ const Category = () => {
       <div className="w-full mb-14 flex justify-center items-end">
         <h1 className="text-2xl md:text-4xl font-bold">Toy Category</h1>
       </div>
-      <div className="flex justify-center space-x-1 mb-4">
+      <div className="flex md:flex-row flex-col justify-center gap-1 md:space-x-1 mb-4">
         <button
           className={`py-2 px-4 rounded ${
             activeCategory === null
@@ -95,20 +95,19 @@ const Category = () => {
           Vintage Teddy
         </button>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-7 rounded-lg">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-7 rounded-lg">
         {filteredToys.map((toy) => (
           <div
             key={toy._id}
             className="bg-white rounded-lg shadow-md overflow-hidden"
           >
-            <img
-              src={toy.photo}
-              alt={toy.toyname}
-              className="w-full h-48 rounded-lg"
-            />
-            <div className="p-5">
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold">{toy.toyname}</h3>
+            <div className="border rounded-lg overflow-hidden">
+              <img src={toy.photo} alt={toy.toyname} className="w-full h-44" />
+            </div>
+
+            <div className="p-3">
+              <div className="space-y-1">
+                <h3 className="font-semibold">{toy.toyname}</h3>
                 <div className="flex items-center gap-3">
                   <Rating
                     placeholderRating={toy.rating}
@@ -121,14 +120,14 @@ const Category = () => {
                 </div>
               </div>
               <div className="divider"></div>
-              <span className="flex justify-between items-center mt-3">
+              <div className="flex justify-between items-center">
                 <Link to={`/category/${toy._id}`}>
-                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+                  <button className="bg-blue-500 hover:bg-blue-700 text-white font-[500] py-[6px] px-4 rounded-full">
                     View Details
                   </button>
                 </Link>
                 <p className="text-red-600 font-[500]">${toy.price}</p>
-              </span>
+              </div>
             </div>
           </div>
         ))}

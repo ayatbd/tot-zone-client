@@ -42,16 +42,13 @@ const UpdateToy = () => {
     };
     console.log(updateToy);
 
-    fetch(
-      `https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy/${_id}`,
-      {
-        method: "PUT",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(updateToy),
-      }
-    )
+    fetch(`https://tot-zone-server.vercel.app/toy/${_id}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(updateToy),
+    })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

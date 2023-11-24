@@ -18,7 +18,7 @@ const AddToy = () => {
 
   const onSubmit = (data) => {
     setLoading(true);
-    fetch("https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy", {
+    fetch("https://tot-zone-server.vercel.app/toy", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -40,35 +40,39 @@ const AddToy = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] p-24">
-      <h2 className="text-3xl font-extrabold text-center">Add a Toy</h2>
+    <div className="bg-[#F4F3F0] px-5 md:p-24">
+      <h2 className="text-3xl font-extrabold text-center mb-10">Add a Toy</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Toy Name</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Toy Name
+              </span>
             </label>
-            <label className="input-group">
+            <label className="">
               <input
                 type="text"
                 {...register("toyname", { required: true })}
                 name="toyname"
                 placeholder="Toy Name"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
-              <span className="label-text">Available Quantity</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Available Quantity
+              </span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="number"
                 {...register("quantity", { required: true })}
                 name="quantity"
                 placeholder="Available Quantity"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>
@@ -76,25 +80,29 @@ const AddToy = () => {
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Seller Email</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Seller Email
+              </span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="email"
                 {...register("email", { required: true })}
                 value={user?.email}
                 placeholder="seller email"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
-              <span className="label-text">Category</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Category
+              </span>
             </label>
             <select
               {...register("category", { required: true })}
-              className="select select-bordered"
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             >
               <option disabled selected>
                 Select Category
@@ -110,30 +118,34 @@ const AddToy = () => {
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Seller Name</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Seller Name
+              </span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 {...register("seller", { required: true })}
                 name="seller"
                 value={user?.displayName}
                 placeholder="seller name"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
-              <span className="label-text">Price</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Price
+              </span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="number"
                 {...register("price", { required: true })}
                 name="price"
                 placeholder="$"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>
@@ -141,29 +153,36 @@ const AddToy = () => {
         <div className="md:flex mb-8">
           <div className="form-control md:w-1/2">
             <label className="label">
-              <span className="label-text">Rating</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Rating
+              </span>
             </label>
-            <label className="input-group">
-              <input
-                type="number"
-                {...register("rating", { required: true })}
-                name="rating"
-                placeholder="Ratings"
-                className="input input-bordered w-full"
-              />
-            </label>
+            <select
+              {...register("rating", { required: true })}
+              className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            >
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>3</option>
+              <option>4</option>
+              <option>4.5</option>
+              <option>5</option>
+            </select>
           </div>
           <div className="form-control md:w-1/2 ml-4">
             <label className="label">
-              <span className="label-text">Detail description</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Detail description
+              </span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 {...register("details", { required: true })}
                 name="details"
                 placeholder="Detail Description"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>
@@ -171,15 +190,17 @@ const AddToy = () => {
         <div className="mb-8">
           <div className="form-control w-full">
             <label className="label">
-              <span className="label-text">Photo URL</span>
+              <span className="mb-3 block text-base font-medium text-[#07074D]">
+                Photo URL
+              </span>
             </label>
-            <label className="input-group">
+            <label>
               <input
                 type="text"
                 {...register("photo", { required: true })}
                 name="photo"
                 placeholder="Photo URL"
-                className="input input-bordered w-full"
+                className="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
               />
             </label>
           </div>

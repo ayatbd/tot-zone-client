@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Loader from "../shared/Loader";
 import PageBanner from "../shared/PageBanner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
@@ -12,10 +12,11 @@ const AllToys = () => {
   const [toys, setToys] = useState([]);
   const [loading, setLoading] = useState(false);
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoading(true);
-    fetch("https://b7a11-toy-marketplace-server-side-ayatbd.vercel.app/toy")
+    fetch("https://tot-zone-server.vercel.app/toy")
       .then((response) => response.json())
       .then((data) => {
         setToys(data);
@@ -35,7 +36,7 @@ const AllToys = () => {
           <li>All Toys</li>
         </ul>
       </PageBanner>
-      <div className="overflow-x-auto overflow-y-hidden">
+      <div className="overflow-x-auto overflow-y-hidden my-20 container mx-auto">
         <table className="table w-full text-center">
           {/* head */}
           <thead>
@@ -68,7 +69,7 @@ const AllToys = () => {
                       </div>
                     </div>
                     <div className="text-start">
-                      <div className="font-bold">{toy.name}</div>
+                      <div className="font-bold">{toy.toyname}</div>
                       <Rating
                         placeholderRating={toy.rating}
                         readonly
@@ -94,7 +95,7 @@ const AllToys = () => {
                           text: "You have to log in first to view details",
                           confirmButtonColor: "#FEBF00",
                         });
-                      // navigate(`/toy/${toy._id}`);
+                      navigate(`/category/${toy._id}`);
                     }}
                     className="btn btn-primary btn-xs"
                   >

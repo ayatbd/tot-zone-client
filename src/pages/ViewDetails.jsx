@@ -22,13 +22,12 @@ const ViewDetails = () => {
           <li>
             <Link to="/">Home</Link>
           </li>
-          <li></li>
           <li>{toyname}</li>
         </ul>
       </PageBanner>
 
-      <div className="container my-20 grid grid-cols-1 md:grid-cols-2 gap-12">
-        <div className="relative">
+      <div className="container mx-auto my-20 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="relative border">
           <img
             src={photo}
             alt={name}

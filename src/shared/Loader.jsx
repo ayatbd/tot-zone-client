@@ -11,7 +11,7 @@ const Loader = () => {
       items-center 
     "
     >
-      <FadeLoader color="#36d7b7" />
+      <FadeLoader color="#2463eb" />
     </div>
   );
 };
