@@ -40,10 +40,10 @@ const AddToy = () => {
       });
   };
   return (
-    <div className="bg-[#F4F3F0] px-5 md:p-24">
+    <div className="bg-[#F4F3F0] px-5 py-10 md:p-24">
       <h2 className="text-3xl font-extrabold text-center mb-10">Add a Toy</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="md:flex mb-8">
+      <form className="space-y-7" onSubmit={handleSubmit(onSubmit)}>
+        <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
@@ -60,7 +60,7 @@ const AddToy = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
                 Available Quantity
@@ -77,7 +77,7 @@ const AddToy = () => {
             </label>
           </div>
         </div>
-        <div className="md:flex mb-8">
+        <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
@@ -94,7 +94,7 @@ const AddToy = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
                 Category
@@ -115,7 +115,7 @@ const AddToy = () => {
             </select>
           </div>
         </div>
-        <div className="md:flex mb-8">
+        <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
@@ -133,7 +133,7 @@ const AddToy = () => {
               />
             </label>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
                 Price
@@ -150,7 +150,7 @@ const AddToy = () => {
             </label>
           </div>
         </div>
-        <div className="md:flex mb-8">
+        <div className="md:flex">
           <div className="form-control md:w-1/2">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
@@ -170,7 +170,7 @@ const AddToy = () => {
               <option>5</option>
             </select>
           </div>
-          <div className="form-control md:w-1/2 ml-4">
+          <div className="form-control md:w-1/2 md:ml-4">
             <label className="label">
               <span className="mb-3 block text-base font-medium text-[#07074D]">
                 Detail description
@@ -206,7 +206,7 @@ const AddToy = () => {
           </div>
         </div>
         <div className="text-center">
-          <button className="bg-blue-500 w-1/6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+          <button className="bg-blue-500 md:w-1/6 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
             {loading ? "Loading.." : "Add Now"}
           </button>
         </div>

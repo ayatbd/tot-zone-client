@@ -1,7 +1,18 @@
+import { Link } from "react-router-dom";
+import PageBanner from "../shared/PageBanner";
+
 const Blogs = () => {
   return (
-    <div className="min-h-[50vh] my-10 md:mt-24 max-w-[900px] mx-auto">
-      <div className="space-y-4">
+    <div className="min-h-[50vh]">
+      <PageBanner heading="Blogs">
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>Blogs</li>
+        </ul>
+      </PageBanner>
+      <div className="space-y-4 my-14">
         <div
           tabIndex={0}
           className="collapse collapse-plus border border-primary bg-base-100 rounded-box "

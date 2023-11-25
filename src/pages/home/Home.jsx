@@ -2,13 +2,13 @@ import Category from "./Category";
 import Gallery from "./Gallery";
 import OurServices from "./OurServices";
 import Review from "./Review";
-import Slider from "./Slider";
 import Toys from "../Toys";
+import Banner from "./Banner";
 
 const Home = () => {
   return (
     <div>
-      <Slider></Slider>
+      <Banner></Banner>
       <Gallery></Gallery>
       <Category></Category>
       <Toys></Toys>

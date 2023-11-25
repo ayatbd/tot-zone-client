@@ -61,55 +61,70 @@ const MyToys = () => {
           <li>My Toys</li>
         </ul>
       </PageBanner>
-      <div className="px-3 py-4 overflow-x-auto container mx-auto">
-        <table className="w-full text-md bg-white shadow-md rounded mb-4">
-          <tbody>
-            <tr className="border-b">
-              <th className="text-left p-3 px-5">Toy Pictur</th>
-              <th className="text-left p-3 px-5">Quantity</th>
-              <th className="text-left p-3 px-5">Category</th>
-              <th className="text-left p-3 px-5">Price</th>
-              <th className="text-left p-3 px-5">Action</th>
-              <th className="text-left p-3 px-5">Action</th>
-            </tr>
-            {toy.map((t) => (
-              <tr
-                key={t._id}
-                className="border-b hover:bg-orange-100 bg-gray-100"
-              >
-                <td className="p-3 px-5">
-                  <div className="flex items-center space-x-3">
-                    <div className="avatar">
-                      <div className="mask mask-squircle w-12 h-12">
-                        <img className="p-1" src={t.photo && t.photo} />
+      {toy.length > 0 ? (
+        <div className="px-3 py-4 overflow-x-auto container mx-auto">
+          <table className="w-full text-md bg-white shadow-md rounded mb-4">
+            <tbody>
+              <tr className="border-b">
+                <th className="text-left p-3 px-5">Toy Pictur</th>
+                <th className="text-left p-3 px-5">Quantity</th>
+                <th className="text-left p-3 px-5">Category</th>
+                <th className="text-left p-3 px-5">Price</th>
+                <th className="text-left p-3 px-5">Action</th>
+                <th className="text-left p-3 px-5">Action</th>
+              </tr>
+              {toy.map((t) => (
+                <tr
+                  key={t._id}
+                  className="border-b hover:bg-orange-100 bg-gray-100"
+                >
+                  <td className="p-3 px-5">
+                    <div className="flex items-center space-x-3">
+                      <div className="avatar">
+                        <div className="mask mask-squircle w-12 h-12">
+                          <img className="p-1" src={t.photo && t.photo} />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </td>
-                <td className="p-3 px-5">{t.toyname}</td>
-                <td className="p-3 px-5">{t.quantity}</td>
-                <td className="p-3 px-5">{t.category}</td>
-                <td className="p-3 px-5">{t.price}</td>
-                <td className="p-3 px-5 flex justify-start">
-                  <button
-                    onClick={() => handleDelete(t._id)}
-                    type="button"
-                    className="mr-3 text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className=" text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
-                    type="button"
-                  >
-                    <Link to={`/update/${t._id}`}>Edit</Link>
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+                  </td>
+                  <td className="p-3 px-5">{t.toyname}</td>
+                  <td className="p-3 px-5">{t.quantity}</td>
+                  <td className="p-3 px-5">{t.category}</td>
+                  <td className="p-3 px-5">{t.price}</td>
+                  <td className="p-3 px-5 flex justify-start">
+                    <button
+                      onClick={() => handleDelete(t._id)}
+                      type="button"
+                      className="mr-3 text-sm bg-red-500 hover:bg-red-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                    >
+                      Delete
+                    </button>
+                    <button
+                      className=" text-sm bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                      type="button"
+                    >
+                      <Link to={`/update/${t._id}`}>Edit</Link>
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div> // if there have no items in my toys
+      ) : (
+        <div className="flex flex-col items-center justify-center gap-4 my-5">
+          <p className="text-center text-error text-lg">
+            You did not add any items to sell!
+          </p>
+          {/* add a toy button */}
+          <Link
+            to="/seller/add-toy"
+            className="btn btn-primary w-44 rounded-full"
+          >
+            Add A Toy
+          </Link>
+        </div>
+      )}
     </div>
   );
 };

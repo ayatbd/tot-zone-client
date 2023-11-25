@@ -24,10 +24,47 @@
     color: #2463eb
 }
 
-.text-host {
-    color: #2563EB;
+/*========== banner css ========== */
+
+.swiper {
+    width: 100%;
+    height: 100%;
 }
 
-.bg-host {
-    background-color: #2563EB;
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    background-color: #2463eb;
+    width: 35px !important;
+    height: 35px !important;
+    border-radius: 50%;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgb(75, 132, 255);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 16px !important;
+    font-weight: bold;
+    color: floralwhite;
 }

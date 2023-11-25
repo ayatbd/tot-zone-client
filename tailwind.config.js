@@ -9,11 +9,13 @@ export default {
 
           secondary: "#FF6799",
 
-          accent: "#838181",
+          accent: "#FFFFFF",
 
           neutral: "#1C1A2D",
 
           "base-100": "#FFFFFF",
+
+          "base-200": "#F2F2F2",
 
           info: "#A5CAE3",
 

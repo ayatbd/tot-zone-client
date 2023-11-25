@@ -70,11 +70,7 @@ const Menubar = () => {
             </ul>
           </div>
           <Link className="ml-2 flex items-center gap-2 font-bold text-blue-500 text-[28px]">
-            <img
-              className="md:w-16 md:h-10 rounded-sm w-10 h-8"
-              src={logo}
-              alt="logo"
-            />
+            <img className="md:w-10 md:h-auto w-10 h-8" src={logo} alt="logo" />
             <p>
               Tot<span className="text-red-500">Zone</span>
             </p>
