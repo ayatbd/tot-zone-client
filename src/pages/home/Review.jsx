@@ -1,14 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
+
+import Heading from "../../shared/Heading";
+
 /* eslint-disable react/no-unknown-property */
 const Review = () => {
   return (
     <div className="w-screen bg-gray-50 py-24">
       {/* Reviews */}
       <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
-        <h3 className="mb-6 text-3xl font-bold text-neutral-800 dark:text-neutral-200">
-          Testimonials
-        </h3>
-        <p className="mb-6 pb-2 md:mb-12 md:pb-0">
+        <Heading heading="Testimonials"></Heading>
+        <p data-aos="fade-up" className="mb-6 pb-2 md:mb-12 md:pb-0">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, error
           amet numquam iure provident voluptate esse quasi, veritatis totam
           voluptas nostrum quisquam eum porro a pariatur veniam.
@@ -16,7 +17,7 @@ const Review = () => {
       </div>
 
       <div className="grid gap-6 text-center md:grid-cols-3 lg:gap-12">
-        <div className="mb-12 md:mb-0">
+        <div data-aos="fade-left" className="mb-12 md:mb-0">
           <div className="mb-6 flex justify-center">
             <img
               src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(1).jpg"
@@ -113,7 +114,7 @@ const Review = () => {
           </ul>
         </div>
 
-        <div className="mb-12 md:mb-0">
+        <div data-aos="fade-left" className="mb-12 md:mb-0">
           <div className="mb-6 flex justify-center">
             <img
               src="https://tecdn.b-cdn.net/img/Photos/Avatars/img%20(2).jpg"
@@ -204,7 +205,7 @@ const Review = () => {
           </ul>
         </div>
 
-        <div className="mb-0">
+        <div data-aos="fade-left" className="mb-0">
           <div className="mb-0">
             <div className="mb-6 flex justify-center">
               <img

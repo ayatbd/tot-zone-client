@@ -13,11 +13,12 @@ const Footer = () => {
         <div className="max-container flex flex-col md:flex-row px-4 md:px-0 gap-10 md:gap-0">
           <div className="text-center md:w-1/2">
             <img
+              data-aos="fade-down"
               src={logo}
               alt="logo"
-              className="md:w-[80px] w-[4px] mx-auto h-auto"
+              className="md:w-[70px] w-[4px] mx-auto h-auto"
             />
-            <p className="text-slate-300 font-medium">
+            <p data-aos="fade-right" className="text-slate-300 font-medium">
               Sit amet conse ctetur adipisicing elit, sed doe eiusmod tempor
               incididunt ut laborea aaaeht dolore magna aliqua.
             </p>
@@ -45,7 +46,7 @@ const Footer = () => {
             </div>
           </div>
           <div className=" grid grid-cols-2 md:grid-cols-3 gap-5 w-full  content-center justify-items-center">
-            <div className="text-white">
+            <div data-aos="fade-left" className="text-white">
               <h1 className="text-white font-bold text-lg">Quick Links</h1>
               <hr className="w-full border border-secondary" />
               <p className="text-base font-medium text-slate-200 mt-5 cursor-pointer">
@@ -61,7 +62,7 @@ const Footer = () => {
                 Blogs
               </p>
             </div>
-            <div className="text-white">
+            <div data-aos="fade-left" className="text-white">
               <h1 className="text-white font-bold text-lg">Our Company</h1>
               <hr className="w-full border border-secondary" />
               <p className="cursor-pointer mt-5 text-base font-medium text-slate-200">
@@ -77,7 +78,10 @@ const Footer = () => {
                 Location
               </p>
             </div>
-            <div className="text-white w-full md:w-fit text-center md:text-start col-span-2 md:col-auto">
+            <div
+              data-aos="fade-left"
+              className="text-white w-full md:w-fit text-center md:text-start col-span-2 md:col-auto"
+            >
               <h1 className="text-white font-bold text-lg">Subscribe</h1>
               <hr className="w-full border border-secondary" />
               <div className="mt-8">

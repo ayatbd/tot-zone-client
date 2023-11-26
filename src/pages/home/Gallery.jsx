@@ -1,4 +1,5 @@
 import Marquee from "react-marquee-slider";
+import Heading from "../../shared/Heading";
 
 const galleryImg = [
   "https://i.ibb.co/HF2gD36/teddy-8.jpg",
@@ -28,11 +29,9 @@ const galleryImgRevers = [
 const Gallery = () => {
   return (
     <div className="container mx-auto">
-      <div className="my-10 md:my-20">
-        <div className="w-full flex justify-center items-end">
-          <h1 className="text-2xl md:text-4xl font-bold">Gallery</h1>
-        </div>
-        <div className="my-10 relative rounded-xl shadow-xl">
+      <div className="py-10 md:py-28">
+        <Heading heading="Gallery"></Heading>
+        <div data-aos="fade-up" className="relative rounded-xl shadow-xl">
           <div className="h-[200px] w-full px-5 pt-5">
             <Marquee key="" velocity={12} className="w-full h-full">
               {galleryImg?.map((toyImg, index) => (

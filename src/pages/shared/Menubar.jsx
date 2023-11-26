@@ -14,7 +14,7 @@ const Menubar = () => {
       .catch((error) => console.log(error));
   };
   return (
-    <div className="">
+    <div data-aos="fade-down" className="">
       <div className="navbar container mx-auto py-3 top-0 z-10">
         <div className="navbar-start">
           <div className="dropdown">

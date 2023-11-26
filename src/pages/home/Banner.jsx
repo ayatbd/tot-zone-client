@@ -36,13 +36,18 @@ const Banner = () => {
             style={{ backgroundImage: `url(${banner9})` }}
           >
             <div className="text-start p-4 max-w-md lg:space-y-4 mx-[8%]">
-              <h3 className="text-4xl font-semibold">Pick the best toy</h3>
+              <h3 data-aos="fade-up" className="text-4xl font-semibold">
+                Pick the best toy
+              </h3>
               <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold font-nunito text-secondary mb-2"></h1>
-              <p className="md:text-lg pb-2">
+              <p data-aos="fade-up" className="md:text-lg pb-2">
                 We offer premium toy, whether you are shopping at one of our
                 actual stores or via our website!
               </p>
-              <button className="btn btn-primary normal-case rounded-full px-10 py-2 font-bold">
+              <button
+                data-aos="fade-up"
+                className="btn btn-primary normal-case rounded-full px-10 py-2 font-bold"
+              >
                 Read more
               </button>
             </div>

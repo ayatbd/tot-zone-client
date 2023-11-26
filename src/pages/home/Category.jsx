@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import {} from "react-icons/ai";
 import { FaRegStar, FaStar } from "react-icons/fa";
 import Rating from "react-rating";
+import Heading from "../../shared/Heading";
 
 const Category = () => {
   const [toys, setToys] = useState([]);
@@ -30,11 +31,10 @@ const Category = () => {
 
   return (
     <div className="container mx-auto p-4">
-      <div className="w-full mb-14 flex justify-center items-end">
-        <h1 className="text-2xl md:text-4xl font-bold">Toy Category</h1>
-      </div>
+      <Heading heading="Toy Category"></Heading>
       <div className="flex md:flex-row flex-col justify-center gap-1 md:space-x-1 mb-4">
         <button
+          data-aos="fade-left"
           className={`py-2 px-4 rounded ${
             activeCategory === null
               ? "bg-blue-500 text-white"
@@ -45,6 +45,7 @@ const Category = () => {
           All
         </button>
         <button
+          data-aos="fade-left"
           className={`py-2 px-4 rounded ${
             activeCategory === "Plush Teddy"
               ? "bg-blue-500 text-white"
@@ -55,6 +56,7 @@ const Category = () => {
           Plush Teddy
         </button>
         <button
+          data-aos="fade-left"
           className={`py-2 px-4 rounded ${
             activeCategory === "Classic Teddy"
               ? "bg-blue-500 text-white"
@@ -65,6 +67,7 @@ const Category = () => {
           Classic Teddy
         </button>
         <button
+          data-aos="fade-left"
           className={`py-2 px-4 rounded ${
             activeCategory === "Giant Teddy"
               ? "bg-blue-500 text-white"
@@ -75,6 +78,7 @@ const Category = () => {
           Giant Teddy
         </button>
         <button
+          data-aos="fade-left"
           className={`py-2 px-4 rounded ${
             activeCategory === "Mini Teddy"
               ? "bg-blue-500 text-white"
@@ -85,6 +89,7 @@ const Category = () => {
           Mini Teddy
         </button>
         <button
+          data-aos="fade-left"
           className={`py-2 px-4 rounded ${
             activeCategory === "Vintage Teddy"
               ? "bg-blue-500 text-white"
@@ -98,6 +103,7 @@ const Category = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-7 rounded-lg">
         {filteredToys.slice(0, 8).map((toy) => (
           <div
+            data-aos="fade-up"
             key={toy._id}
             className="bg-white rounded-lg shadow-md overflow-hidden"
           >
