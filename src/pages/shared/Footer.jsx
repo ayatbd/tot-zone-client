@@ -19,8 +19,8 @@ const Footer = () => {
               className="md:w-[70px] w-[4px] mx-auto h-auto"
             />
             <p data-aos="fade-right" className="text-slate-300 font-medium">
-              Sit amet conse ctetur adipisicing elit, sed doe eiusmod tempor
-              incididunt ut laborea aaaeht dolore magna aliqua.
+              "An enchanting treasure trove of joyous playthings! Exceptional
+              quality, endless delight for kids."
             </p>
             <div className="flex gap-2 md:gap-3 w-full justify-center mt-5">
               <a href="">

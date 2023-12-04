@@ -123,14 +123,14 @@ const Menubar = () => {
             {!user ? (
               <Link
                 to="/login"
-                className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm"
+                className="px-5 py-2.5 font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm"
               >
                 Log In
               </Link>
             ) : (
               <Link
                 onClick={handleLogOut}
-                className="px-5 py-2.5 font-medium bg-blue-50 hover:bg-blue-100 hover:text-blue-600 text-blue-500 rounded-lg text-sm"
+                className="px-5 py-2.5 font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm"
               >
                 Log Out
               </Link>
