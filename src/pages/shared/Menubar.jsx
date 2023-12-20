@@ -57,6 +57,9 @@ const Menubar = () => {
               <li>
                 <Link to="/blogs">Blogs</Link>
               </li>
+              <li>
+                <Link to="/aboutus">About Us</Link>
+              </li>
 
               {!user ? (
                 <li>
@@ -114,6 +117,14 @@ const Menubar = () => {
             <li>
               <NavLink to="/blogs" className="text-grey-700 text-sm font-[500]">
                 Blogs
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/aboutus"
+                className="text-grey-700 text-sm font-[500]"
+              >
+                About Us
               </NavLink>
             </li>
           </ul>

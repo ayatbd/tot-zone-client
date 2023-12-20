@@ -13,6 +13,7 @@ import Blogs from "./../pages/Blogs";
 import Gallery from "../pages/home/Gallery";
 import UpdateToy from "./../pages/updateToy";
 import ViewDetails from "./../pages/ViewDetails";
+import AboutUs from "../pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: "gallery",
         element: <Gallery></Gallery>,
+      },
+      {
+        path: "aboutus",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/update/:id",
