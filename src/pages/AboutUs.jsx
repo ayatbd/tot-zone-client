@@ -6,10 +6,9 @@ const AboutUs = () => {
           <div className="mb-10 w-full shrink-0 grow-0 basis-auto md:mb-0 md:w-6/12 md:px-3 lg:px-6">
             <h2 className="mb-6 text-3xl font-bold">Contact us</h2>
             <p className="mb-6 text-neutral-500 dark:text-neutral-300">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Laudantium, modi accusantium ipsum corporis quia asperiores
-              dolorem nisi corrupti eveniet dolores ad maiores repellendus enim
-              autem omnis fugiat perspiciatis? Ad, veritatis.
+              "Welcome to our magical toy emporium! Discover a whimsical world
+              of imagination through our curated collection of playful and
+              educational toys for kids of all ages. Let the fun begin!"
             </p>
             <p className="mb-2 text-neutral-500 dark:text-neutral-300">
               New York, 94126, United States
