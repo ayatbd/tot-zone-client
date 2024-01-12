@@ -35,8 +35,7 @@ const Blogs = () => {
               expires. It is securely stored on the client-side and sent to the
               server to request a fresh access token when needed. Refresh tokens
               are typically associated with longer expiration times and can be
-              used to maintain the user's session and avoid frequent
-              authentication.
+              used to maintain the session and avoid frequent authentication.
             </p>
             <p className="mt-3">
               <span className="font-semibold">
@@ -72,8 +71,8 @@ const Blogs = () => {
               SQL databases are vertically scalable, while NoSQL databases are
               horizontally scalable. SQL databases are table-based, while NoSQL
               databases are document, key-value, graph, or wide-column stores.
-              SQL databases are better for multi-row transactions, while NoSQL
-              is better for unstructured data like documents or JSON.
+              SQL databases are better, while NoSQL is better for unstructured
+              data like documents or JSON.
             </p>
           </div>
         </div>
