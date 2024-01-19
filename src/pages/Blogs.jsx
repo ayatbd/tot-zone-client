@@ -88,8 +88,7 @@ const Blogs = () => {
               Express is a minimalist and flexible framework that is easy to use
               and has a large community of developers. NestJS, on the other
               hand, is a newer framework that provides additional features such
-              as dependency injection, a modular architecture, and an intuitive
-              CLI.
+              as dependency injection and an intuitive CLI.
             </p>
           </div>
         </div>
