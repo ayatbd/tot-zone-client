@@ -51,9 +51,9 @@ const Blogs = () => {
               from storage mechanisms.
               <br />
               2. Refresh Token: The refresh token is more sensitive and should
-              be stored securely. It is usually stored in an HTTP-only cookie to
+              be stored securely. It is usually stored in an HTTP only cookie to
               prevent access by client-side JavaScript. This helps protect
-              against cross-site scripting (XSS) attacks. Alternatively, it can
+              against cross site scripting (XSS) attacks. Alternatively it can
               be stored in secure client-side storage mechanisms with
               appropriate precautions.
             </p>
@@ -86,9 +86,9 @@ const Blogs = () => {
           <div className="collapse-content">
             <p>
               Express is a minimalist and flexible framework that is easy to use
-              and has a large community of developers. NestJS, on the other
-              hand, is a newer framework that provides additional features such
-              as dependency injection and an intuitive CLI.
+              and has a large community of developers. NestJS on the other hand,
+              is a newer framework that provides additional features such as
+              dependency injection and an intuitive CLI.
             </p>
           </div>
         </div>
