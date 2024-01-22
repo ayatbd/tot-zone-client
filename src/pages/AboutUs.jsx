@@ -11,10 +11,10 @@ const AboutUs = () => {
               educational toys for kids of all ages. Let the fun begin!
             </p>
             <p className="mb-2 text-neutral-500 dark:text-neutral-300">
-              New York, 94126, United States
+              California, 94122, United States
             </p>
             <p className="mb-2 text-neutral-500 dark:text-neutral-300">
-              + 01 234 567 89
+              +88 01 734 567 89
             </p>
             <p className="mb-2 text-neutral-500 dark:text-neutral-300">
               info@gmail.com
