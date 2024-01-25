@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "../../index.css";
-// import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 import banner9 from "../../assets/images/banner9.jpg";
@@ -88,7 +87,7 @@ const Banner = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold font-nunito text-secondary mb-2"></h1>
               <p className="md:text-lg text-sm pb-2">
                 The best offer for regular customer, including free shipping on
-                your children's birthday!
+                your children birthday!
               </p>
               <button className="btn btn-primary normal-case rounded-full md:px-10 md:py-2 font-bold">
                 Discover Now
@@ -110,7 +109,7 @@ const Banner = () => {
               <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold font-nunito text-secondary mb-2"></h1>
               <p className="md:text-lg text-sm pb-2">
                 Active toys for smart and active kids. Bring fun and non-stop
-                learning for your little ones.!
+                learning for your little ones!
               </p>
               <button className="btn btn-primary normal-case rounded-full md:px-10 md:py-2 font-bold">
                 Discover Now
