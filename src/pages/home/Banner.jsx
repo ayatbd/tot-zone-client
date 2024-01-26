@@ -108,7 +108,7 @@ const Banner = () => {
               </h3>
               <h1 className="text-4xl sm:text-5xl md:text-6xl xl:text-7xl font-extrabold font-nunito text-secondary mb-2"></h1>
               <p className="md:text-lg text-sm pb-2">
-                Active toys for smart and active kids. Bring fun and non-stop
+                Active toys for smart and active kids.. Bring fun and non-stop
                 learning for your little ones!
               </p>
               <button className="btn btn-primary normal-case rounded-full md:px-10 md:py-2 font-bold">
