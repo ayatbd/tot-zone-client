@@ -11,7 +11,7 @@ const Review = () => {
         <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
           <Heading heading="Testimonials"></Heading>
           <p data-aos="fade-up" className="mb-6 pb-2 md:mb-12 md:pb-0">
-            Our customers love our toys! Here's what some of them have to say:
+            Our customers love our toys!! Here's what some of them have to say:
           </p>
         </div>
 

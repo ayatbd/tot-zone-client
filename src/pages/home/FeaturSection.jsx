@@ -19,7 +19,7 @@ const FeatureSection = () => {
             <h3 className="text-xl font-bold mb-2">Realistic Design</h3>
             <p className="text-gray-700">
               Our toy cars are designed to resemble real vehicles, providing a
-              lifelike experience.
+              lifelike experience...
             </p>
           </div>
           {/* Feature Card 2 */}
@@ -32,7 +32,7 @@ const FeatureSection = () => {
             <h3 className="text-xl font-bold mb-2">Remote Control</h3>
             <p className="text-gray-700">
               Control the toy cars with an easy-to-use remote, giving you full
-              command of the action.
+              command of the action..
             </p>
           </div>
           {/* Feature Card 3 */}
