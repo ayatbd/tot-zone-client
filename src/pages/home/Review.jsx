@@ -11,7 +11,7 @@ const Review = () => {
         <div className="mx-auto text-center md:max-w-xl lg:max-w-3xl">
           <Heading heading="Testimonials"></Heading>
           <p data-aos="fade-up" className="mb-6 pb-2 md:mb-12 md:pb-0">
-            Our customers love our toys!! Here's what some of them have to say:
+            Our customers love our toys! Here's what some of them have to say:
           </p>
         </div>
 
@@ -120,7 +120,7 @@ const Review = () => {
                 className="w-32 rounded-full shadow-lg dark:shadow-black/30"
               />
             </div>
-            <h5 className="mb-4 text-xl font-semibold">Lisa Cudrow</h5>
+            <h5 className="mb-4 text-xl font-semibold">Lisa Cuddrow</h5>
 
             <p className="mb-4">
               <svg
@@ -224,7 +224,7 @@ const Review = () => {
                   <path d="M13 14.725c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275zm-13 0c0-5.141 3.892-10.519 10-11.725l.984 2.126c-2.215.835-4.163 3.742-4.38 5.746 2.491.392 4.396 2.547 4.396 5.149 0 3.182-2.584 4.979-5.199 4.979-3.015 0-5.801-2.305-5.801-6.275z" />
                 </svg>
                 "Fantastic toys! My children can't get enough of them. Great
-                quality and durability."
+                quality and durability.."
               </p>
               <ul className="mb-0 flex items-center justify-center">
                 <li>
