@@ -5,9 +5,9 @@ const galleryImg = [
   "https://i.ibb.co/HF2gD36/teddy-8.jpg",
   "https://i.ibb.co/PZzjbCJ/teddy-7.jpg",
   "https://i.ibb.co/Twdckzr/teddy-6.jpg",
-  "https://i.ibb.co/v4mQWcw/teddy-5.jpg",
+  "https://i.ibb.co/8mMxxGs/teddy5.jpg",
   "https://i.ibb.co/7XvD90C/teddy-4.jpg",
-  "https://i.ibb.co/C8Y6tGn/teddy-3.jpg",
+  "https://i.ibb.co/8mMxxGs/teddy3.jpg",
   "https://i.ibb.co/0mgKGK8/teddy-2.jpg",
   "https://i.ibb.co/cc0t00G/teddy-1.jpg",
   "https://i.ibb.co/h82hRmK/teddy10.jpg",
@@ -22,7 +22,7 @@ const galleryImgRevers = [
   "https://i.ibb.co/C8Y6tGn/teddy-3.jpg",
   "https://i.ibb.co/HF2gD36/teddy-8.jpg",
   "https://i.ibb.co/7XvD90C/teddy-4.jpg",
-  "https://i.ibb.co/v4mQWcw/teddy-5.jpg",
+  "https://i.ibb.co/8mMxxGs/teddy5.jpg",
   "https://i.ibb.co/cc0t00G/teddy-1.jpg",
 ];
 
