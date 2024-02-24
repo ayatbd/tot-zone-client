@@ -12,7 +12,7 @@ const Blogs = () => {
           <li>Blogs</li>
         </ul>
       </PageBanner>
-      <div className="space-y-4 my-14">
+      <div className="space-y-4 my-14 container mx-auto">
         <div
           tabIndex={0}
           className="collapse collapse-plus border border-primary bg-base-100 rounded-box "
