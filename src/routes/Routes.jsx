@@ -15,6 +15,7 @@ import UpdateToy from "./../pages/updateToy";
 import ViewDetails from "./../pages/ViewDetails";
 import AboutUs from "../pages/AboutUs";
 import Cart from "../pages/Cart";
+import ContactUs from "../pages/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,10 @@ const router = createBrowserRouter([
       {
         path: "aboutus",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "contactus",
+        element: <ContactUs></ContactUs>,
       },
       {
         path: "cart",
