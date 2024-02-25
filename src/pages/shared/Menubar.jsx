@@ -3,6 +3,7 @@ import { useContext } from "react";
 import logo from "../../assets/images/logo4.png";
 import avatar from "../../assets/images/logo.jpg";
 import { AuthContext } from "../../provider/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
 import "../../index.css";
 
 const Menubar = () => {
@@ -129,7 +130,7 @@ const Menubar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end space-x-4">
+        <div className="navbar-end space-x-8">
           <span className="text-center hidden md:inline">
             {!user ? (
               <Link
@@ -148,7 +149,7 @@ const Menubar = () => {
             )}
           </span>
           <div tabIndex={0} className="btn btn-ghost btn-circle avatar">
-            <div className="w-10 rounded-full">
+            {/* <div className="w-10 rounded-full">
               {!user ? (
                 <img src={avatar} />
               ) : (
@@ -156,7 +157,8 @@ const Menubar = () => {
                   <img src={user?.photoURL} />
                 </div>
               )}
-            </div>
+            </div> */}
+            <FaShoppingCart size="20" />
           </div>
           {/* <img src={logo} /> */}
         </div>

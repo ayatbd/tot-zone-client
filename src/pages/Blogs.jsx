@@ -19,7 +19,7 @@ const Blogs = () => {
         >
           <div className="collapse-title text-xl font-medium">
             What is an access token and refresh token? How do they work and
-            where should we store them on the client-side?
+            where should we store them on the client side?
           </div>
           <div className="collapse-content">
             <p>
