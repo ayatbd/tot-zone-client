@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";
 import logo from "../../assets/images/logo4.png";
-import avatar from "../../assets/images/logo.jpg";
+// import avatar from "../../assets/images/logo.jpg";
 import { AuthContext } from "../../provider/AuthProvider";
 import { FaShoppingCart } from "react-icons/fa";
 import "../../index.css";
@@ -158,7 +158,9 @@ const Menubar = () => {
                 </div>
               )}
             </div> */}
-            <FaShoppingCart size="20" />
+            <Link to="/cart">
+              <FaShoppingCart size="20" />
+            </Link>
           </div>
           {/* <img src={logo} /> */}
         </div>

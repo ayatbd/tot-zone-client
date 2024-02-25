@@ -14,6 +14,7 @@ import Gallery from "../pages/home/Gallery";
 import UpdateToy from "./../pages/updateToy";
 import ViewDetails from "./../pages/ViewDetails";
 import AboutUs from "../pages/AboutUs";
+import Cart from "../pages/Cart";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +73,10 @@ const router = createBrowserRouter([
       {
         path: "aboutus",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "cart",
+        element: <Cart></Cart>,
       },
       {
         path: "/update/:id",
