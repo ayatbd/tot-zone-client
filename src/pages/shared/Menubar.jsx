@@ -20,7 +20,7 @@ const Menubar = () => {
   };
   return (
     <div data-aos="fade-down" className=" ">
-      <div className="border-b-2 border-gray-100">
+      <div className="border-b-2 border-gray-100 hidden md:block">
         <div className="flex justify-between items-center py-3 container mx-auto">
           <ul className="flex justify-center items-center gap-5">
             <li className="text-sm">About Us</li>
@@ -189,15 +189,31 @@ const Menubar = () => {
               <p className="text-sm font-bold">+88017******</p>
             </span>
           </div>
-          <span className="menu-icon p-2 bg-gray-100 rounded-full">
-            <Link>
-              <AiOutlineUser size="20" />
-            </Link>
-          </span>
-          <span className="menu-icon p-2 bg-gray-100 rounded-full">
-            <Link>
-              <CiHeart size="20" />
-            </Link>
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="avatar">
+              <span className="menu-icon p-2 bg-gray-100 rounded-full">
+                <AiOutlineUser size="20" />
+              </span>
+            </div>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">Profile</a>
+              </li>
+              <li>
+                {!user ? (
+                  <Link to="/login">Log In</Link>
+                ) : (
+                  <Link onClick={handleLogOut}>Log Out</Link>
+                )}
+              </li>
+            </ul>
+          </div>
+
+          <span className="menu-icon p-2 bg-gray-100 rounded-full cursor-pointer">
+            <CiHeart size="20" />
           </span>
           <span className="menu-icon p-2 bg-gray-100 rounded-full">
             <Link to="/cart">
