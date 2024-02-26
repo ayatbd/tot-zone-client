@@ -24,6 +24,11 @@
     color: #2463eb
 }
 
+.menu-icon:hover {
+    color: #2463eb;
+    background-color: aliceblue;
+}
+
 /*========== banner css ========== */
 
 .swiper {

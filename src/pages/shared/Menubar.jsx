@@ -189,17 +189,17 @@ const Menubar = () => {
               <p className="text-sm font-bold">+88017******</p>
             </span>
           </div>
-          <span className="p-2 bg-gray-100 rounded-full">
+          <span className="menu-icon p-2 bg-gray-100 rounded-full">
             <Link>
               <AiOutlineUser size="20" />
             </Link>
           </span>
-          <span className="p-2 bg-gray-100 rounded-full">
+          <span className="menu-icon p-2 bg-gray-100 rounded-full">
             <Link>
               <CiHeart size="20" />
             </Link>
           </span>
-          <span className="p-2 bg-gray-100 rounded-full">
+          <span className="menu-icon p-2 bg-gray-100 rounded-full">
             <Link to="/cart">
               <AiOutlineShoppingCart size="20" />
             </Link>
