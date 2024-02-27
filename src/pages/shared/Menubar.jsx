@@ -144,18 +144,18 @@ const Menubar = () => {
             </li>
             <li>
               <NavLink
-                to="/contactus"
-                className="text-grey-700 text-sm font-[700]"
-              >
-                Contact
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
                 to="/aboutus"
                 className="text-grey-700 text-sm font-[700]"
               >
                 About Us
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/contactus"
+                className="text-grey-700 text-sm font-[700]"
+              >
+                Contact
               </NavLink>
             </li>
           </ul>

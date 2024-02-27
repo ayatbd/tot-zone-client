@@ -12,10 +12,10 @@ import AddToy from "./../pages/AddToy";
 import Blogs from "./../pages/Blogs";
 import Gallery from "../pages/home/Gallery";
 import UpdateToy from "./../pages/updateToy";
-import ViewDetails from "./../pages/ViewDetails";
 import AboutUs from "../pages/AboutUs";
 import Cart from "../pages/Cart";
 import ContactUs from "../pages/ContactUs";
+import ViewDetails from "../pages/home/ViewDetails";
 
 const router = createBrowserRouter([
   {

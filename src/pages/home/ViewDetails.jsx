@@ -1,5 +1,5 @@
 import { Link, useLoaderData } from "react-router-dom";
-import PageBanner from "../shared/PageBanner";
+import PageBanner from "../../shared/PageBanner";
 import {
   FaFacebookF,
   FaGoogle,
@@ -76,7 +76,7 @@ const ViewDetails = () => {
             className="btn btn-primary rounded-full w-44 normal-case !text-lg"
             data-aos="fade-left"
           >
-            Buy Now
+            Add to cart
           </button>
           <p
             className="flex items-center gap-3 font-extrabold font-nunito"
