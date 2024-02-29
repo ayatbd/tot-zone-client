@@ -73,3 +73,13 @@
     font-weight: bold;
     color: floralwhite;
 }
+
+/*========== popular toys section css ========== */
+
+.on-hover-anim {
+    display: none;
+}
+
+.main-div:hover .on-hover-anim {
+    display: block;
+}
