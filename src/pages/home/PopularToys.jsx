@@ -25,8 +25,8 @@ const PopularToys = () => {
       <h2 className="text-4xl text-center font-bold mb-8">Popular in Store</h2>
       <main className="grid grid-cols-2 gap-x-6 gap-y-10 px-2 pb-20 sm:grid-cols-3 sm:px-8 lg:mt-16 lg:grid-cols-4 lg:gap-x-4 lg:px-0">
         {sortedByRatings.slice(0, 4).map((toy) => (
-          <div key={toy.id} className="relative border">
-            <div className="main-div relative">
+          <div key={toy.id} className="parent relative border">
+            <div>
               <div className="aspect-square overflow-hidden border">
                 <img
                   className="h-full w-full object-cover transition-all duration-300 group-hover:scale-125"
@@ -61,7 +61,7 @@ const PopularToys = () => {
                 </div>
               </div>
             </div>
-            <div className="on-hover-anim absolute top-0 left-0 w-full h-full bg-gray-800 z-50"></div>
+            {/* <div className="on-hover-anim absolute top-0 left-0 w-full h-full bg-gray-800 z-50"></div> */}
           </div>
         ))}
       </main>
