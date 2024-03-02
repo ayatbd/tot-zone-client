@@ -95,7 +95,21 @@ const Menubar = () => {
               )}
             </ul>
           </div>
-          <Link className="flex items-center gap-2 font-bold text-blue-500 text-[28px]">
+          <div className="hidden md:inline">
+            <Link className=" flex items-center gap-2 font-bold text-blue-500 text-[28px]">
+              <img
+                className="md:w-10 md:h-auto w-10 h-8"
+                src={logo}
+                alt="logo"
+              />
+              <p>
+                Tot<span className="text-red-500">Zone</span>
+              </p>
+            </Link>
+          </div>
+        </div>
+        <div className="navbar-center md:hidden">
+          <Link className=" flex items-center gap-2 font-bold text-blue-500 text-[28px]">
             <img className="md:w-10 md:h-auto w-10 h-8" src={logo} alt="logo" />
             <p>
               Tot<span className="text-red-500">Zone</span>
@@ -160,24 +174,31 @@ const Menubar = () => {
             </li>
           </ul>
         </div>
-        <div className="navbar-end space-x-5">
-          {/* <span className="text-center hidden md:inline">
-            {!user ? (
-              <Link
-                to="/login"
-                className="px-5 py-2.5 font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm"
-              >
-                Log In
-              </Link>
-            ) : (
-              <Link
-                onClick={handleLogOut}
-                className="px-5 py-2.5 font-medium bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm"
-              >
-                Log Out
-              </Link>
-            )}
-          </span> */}
+        <div className="md:hidden navbar-end space-x-5 mr-4">
+          <div className="dropdown dropdown-end">
+            <div tabIndex={0} role="button" className="avatar">
+              <span className="menu-icon p-2 bg-gray-100 rounded-full">
+                <AiOutlineUser size="20" />
+              </span>
+            </div>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a className="justify-between">Profile</a>
+              </li>
+              <li>
+                {!user ? (
+                  <Link to="/login">Log In</Link>
+                ) : (
+                  <Link onClick={handleLogOut}>Log Out</Link>
+                )}
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div className="navbar-end md:inline-flex hidden space-x-5">
           <div className="flex justify-center items-center gap-3">
             <span className="p-2 bg-gray-100 rounded-full">
               <span>

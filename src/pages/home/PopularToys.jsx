@@ -23,7 +23,7 @@ const PopularToys = () => {
   return (
     <div className="container mx-auto">
       <h2 className="text-4xl text-center font-bold mb-8">Popular in Store</h2>
-      <main className="grid grid-cols-2 gap-x-6 gap-y-10 px-2 pb-20 sm:grid-cols-3 sm:px-8 lg:mt-16 lg:grid-cols-4 lg:gap-x-4 lg:px-0">
+      <main className="grid grid-cols-1 gap-x-6 gap-y-10 px-2 pb-20 sm:grid-cols-3 sm:px-8 lg:mt-16 lg:grid-cols-4 lg:gap-x-4 lg:px-0">
         {sortedByRatings.slice(0, 4).map((toy) => (
           <div key={toy.id} className="parent relative border">
             <div>

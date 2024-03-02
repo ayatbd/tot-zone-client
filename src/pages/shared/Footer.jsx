@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import logo from "../../assets/images/logo4.png";
 import {
   FaFacebookF,
