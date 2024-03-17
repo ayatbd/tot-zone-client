@@ -16,6 +16,7 @@ import AboutUs from "../pages/AboutUs";
 import Cart from "../pages/Cart";
 import ContactUs from "../pages/ContactUs";
 import ViewDetails from "../pages/home/ViewDetails";
+import Profile from "./../pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -73,15 +74,19 @@ const router = createBrowserRouter([
       },
       {
         path: "aboutus",
-        element: <AboutUs></AboutUs>,
+        element: <AboutUs />,
       },
       {
         path: "contactus",
-        element: <ContactUs></ContactUs>,
+        element: <ContactUs />,
       },
       {
         path: "cart",
-        element: <Cart></Cart>,
+        element: <Cart />,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
       {
         path: "/update/:id",
