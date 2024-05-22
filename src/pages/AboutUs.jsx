@@ -14,9 +14,9 @@ const AboutUs = () => {
                 Discover a world of joy and imagination in our about section! At
                 our toy website, we're passionate about creating smiles. Dive
                 into our story, where every toy is a tale waiting to be told.
-                Learn about our commitment to quality, safety, and the magical
-                journey that brings laughter to children's faces. Welcome to the
-                enchanting realm of play!
+                Learn about our commitment to quality,, safety, and the magical
+                journey that brings laughter to children's faces.. Welcome to
+                the enchanting realm of play!
               </p>
               <div className="mt-8">
                 <a
