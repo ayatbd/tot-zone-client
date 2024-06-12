@@ -11,8 +11,8 @@ const Profile = () => {
                 alt=""
               />
               <div className="flex ml-3 flex-col">
-                <h3 className="font-medium">Sarah Carter</h3>
-                <p className="text-xs text-gray-500">Sr. Engineer</p>
+                <h3 className="font-medium">User Name</h3>
+                <p className="text-xs text-gray-500">Designation</p>
               </div>
             </div>
 

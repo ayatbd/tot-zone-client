@@ -1,12 +1,5 @@
-
-
 function App() {
-
-  return (
-    <>
-      <h2 className='font-bold text-center'></h2>
-    </>
-  )
+  return <></>;
 }
 
-export default App
+export default App;
