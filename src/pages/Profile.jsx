@@ -158,7 +158,7 @@ const Profile = () => {
                 </nav>
 
                 <span className="ml-3 mt-10 mb-2 block text-xs font-semibold text-gray-500">
-                  Product Mangement
+                  Products Mangement
                 </span>
 
                 <nav className="flex-1">
